@@ -10,8 +10,6 @@ print("Fun facts about this game:")
 print("It first appeared in China in the 17th century.")
 print("Statistically people choose Scissors in the first round")
 print("and Rock in the second.")
-print("A robot developed in Japan wins with 100 per cent chance.")
-print("It analyzes movement of your hand muscles to predict your choice.")
 
 """
 Create game variables
@@ -27,25 +25,39 @@ combinations
 """
 
 
-def whoIsTheWinner(user, computer):
-    if (user == "Rock" and computer == "Paper"):
+def whoIsTheWinner(userTurn, computerTurn):
+    if (userTurn == "Rock" and computerTurn == "Paper"):
         print("Sorry, you lost!")
         return "Computer"
-    elif (user == "Rock" and computer == "Scissors"):
+    elif (userTurn == "Rock" and computerTurn == "Scissors"):
         print("Yay, you won!")
-        retun "You"
-    elif (user == "Scissors" and computer == "Paper"):
+        return "You"
+    elif (userTurn == "Scissors" and computerTurn == "Paper"):
         print("Yay, you won!")
-        retun "You"
-    elif (user == "Scissors" and computer == "Rock"):
+        return "You"
+    elif (userTurn == "Scissors" and computerTurn == "Rock"):
         print("Sorry, you lost!")
         return "Computer"
-    elif (user == "Paper" and computer == "Rock"):
+    elif (userTurn == "Paper" and computerTurn == "Rock"):
         print("Yay, you won!")
-        retun "You"
-    elif (user == "Paper" and computer == "Scissors"):
+        return "You"
+    elif (userTurn == "Paper" and computerTurn == "Scissors"):
         print("Sorry, you lost!")
         return "Computer"
     else:
         print("It's a tie, play once again!")
         return "Tie"
+
+
+"""
+Function to kick off the game. Validate the score
+"""
+
+while(userScore != 3 and computerScore != 3):
+    while True:
+        userTurn = input("\nYour turn to choose one: Rock, Paper or Scissors: ")
+        if(userTurn == "Rock" or userTurn == "Paper" or userTurn == "Scissors"):
+            break
+        else: 
+            print("You can only choose between Rock, Paper or Scissors. Try again.")
+
