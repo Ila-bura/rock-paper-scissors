@@ -25,23 +25,23 @@ combinations
 """
 
 
-def whoIsTheWinner(userTurn, computerTurn):
-    if (userTurn == "Rock" and computerTurn == "Paper"):
+def whoIsTheWinner(user, computer):
+    if (user == "Rock" and computer == "Paper"):
         print("Sorry, you lost!")
         return "Computer"
-    elif (userTurn == "Rock" and computerTurn == "Scissors"):
+    elif (user == "Rock" and computer == "Scissors"):
         print("Yay, you won!")
         return "You"
-    elif (userTurn == "Scissors" and computerTurn == "Paper"):
+    elif (user == "Scissors" and computer == "Paper"):
         print("Yay, you won!")
         return "You"
-    elif (userTurn == "Scissors" and computerTurn == "Rock"):
+    elif (user == "Scissors" and computer == "Rock"):
         print("Sorry, you lost!")
         return "Computer"
-    elif (userTurn == "Paper" and computerTurn == "Rock"):
+    elif (user == "Paper" and computer == "Rock"):
         print("Yay, you won!")
         return "You"
-    elif (userTurn == "Paper" and computerTurn == "Scissors"):
+    elif (user == "Paper" and computer == "Scissors"):
         print("Sorry, you lost!")
         return "Computer"
     else:
@@ -53,11 +53,24 @@ def whoIsTheWinner(userTurn, computerTurn):
 Function to kick off the game. Validate the score
 """
 
-while(userScore != 3 and computerScore != 3):
+while (userScore != 3 and computerScore != 3):
     while True:
-        userTurn = input("\nYour turn to choose one: Rock, Paper or Scissors: ")
-        if(userTurn == "Rock" or userTurn == "Paper" or userTurn == "Scissors"):
+        user = input("\nYour turn to choose Rock, Paper or Scissors: ").lower()
+        if (user == "Rock" or user == "Paper" or user == "Scissors"):
             break
         else: 
-            print("You can only choose between Rock, Paper or Scissors. Try again.")
+            print("You can only choose Rock, Paper or Scissors. Try again.")
 
+"""
+Generate random computer choice
+"""
+
+computer = random.choice(gameOptions)
+
+"""
+Print results
+"""
+
+print("You: ", user)
+print("Computer: ", computer)
+result = whoIsTheWinner(user, computer)
