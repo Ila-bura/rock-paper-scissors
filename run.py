@@ -6,23 +6,23 @@ Initial print statements to greet the user and introduce the game
 
 print("Welcome to the game of Rock Paper Scissors!")
 print("-------------------------------------------")
-print("Fun facts about this game:")
-print("It first appeared in China in the 17th century.")
-print("Statistically people choose Scissors in the first round")
+print("Two fun facts about this game:")
+print("1. It first appeared in China in the 17th century.")
+print("2. Statistically, people tend to choose Scissors in the first round")
 print("and Rock in the second.")
+print("Let's play!")
+
 
 """
 Create game variables
+Function to kick off the game. Check if the option typed is valid.
+Show option to abandon the game.
 """
+
 userScore = 0
 computerScore = 0
 tiedScore = 0
 gameOptions = ["rock", "paper", "scissors"]
-
-"""
-Function to kick off the game. Check if the option typed is valid.
-Show option to abandon the game.
-"""
 
 while True:
     userTurn = input("\nChoose Rock, Paper or Scissors or Q to quit: ").lower()
