@@ -20,7 +20,8 @@ tiedScore = 0
 gameOptions = ["rock", "paper", "scissors"]
 
 """
-Function to kick off the game. Check if the option typed is valid
+Function to kick off the game. Check if the option typed is valid.
+Show option to abandon the game.
 """
 
 while True:
