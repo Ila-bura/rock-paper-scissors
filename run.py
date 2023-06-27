@@ -63,7 +63,7 @@ while True:
         print("Sorry, you lost!")
         computerScore += 1
 
-    elif userTurn == computerTurn:
+    else:
         print("It's a tie, play once again!")
         tiedScore += 1
 
