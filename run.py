@@ -17,60 +17,56 @@ Create game variables
 userScore = 0
 computerScore = 0
 tiedScore = 0
-gameOptions = ["Rock", "Paper", "Scissors"]
+gameOptions = ["rock", "paper", "scissors"]
 
 """
-Function to check who is the winner for each round depending on possible
-combinations
+Function to kick off the game. Check if the option typed is valid
 """
 
+while True:
+    userTurn = input("\nChoose Rock, Paper or Scissors or Q to quit: ").lower()
+    if userTurn == "q":
+        break
+    if userTurn not in gameOptions:
+        print("Invalid input: you can only choose Rock, Paper or Scissors.")
+        print("Please, try again!")
+        continue
 
-def whoIsTheWinner(user, computer):
-    if (user == "Rock" and computer == "Paper"):
-        print("Sorry, you lost!")
-        return "Computer"
-    elif (user == "Rock" and computer == "Scissors"):
+    random_number = random.randint(0, 2)
+    # index number: rock 0, paper 1, scissors 2
+    computerTurn = gameOptions[random_number]
+    print("You chose", userTurn.capitalize() + ".")
+    print("Computer chose", computerTurn.capitalize() + ".")
+
+    if userTurn == "rock" and computerTurn == "scissors":
         print("Yay, you won!")
-        return "You"
-    elif (user == "Scissors" and computer == "Paper"):
+        userScore += 1
+
+    elif userTurn == "paper" and computerTurn == "rock":
         print("Yay, you won!")
-        return "You"
-    elif (user == "Scissors" and computer == "Rock"):
-        print("Sorry, you lost!")
-        return "Computer"
-    elif (user == "Paper" and computer == "Rock"):
+        userScore += 1
+
+    elif userTurn == "scissors" and computerTurn == "paper":
         print("Yay, you won!")
-        return "You"
-    elif (user == "Paper" and computer == "Scissors"):
+        userScore += 1
+
+    elif userTurn == "scissors" and computerTurn == "rock":
         print("Sorry, you lost!")
-        return "Computer"
-    else:
+        computerScore += 1
+
+    elif userTurn == "paper" and computerTurn == "scissors":
+        print("Sorry, you lost!")
+        computerScore += 1
+
+    elif userTurn == "rock" and computerTurn == "paper":
+        print("Sorry, you lost!")
+        computerScore += 1
+
+    elif userTurn == computerTurn:
         print("It's a tie, play once again!")
-        return "Tie"
+        tiedScore += 1
 
-
-"""
-Function to kick off the game. Validate the score
-"""
-
-while (userScore != 3 and computerScore != 3):
-    while True:
-        user = input("\nYour turn to choose Rock, Paper or Scissors: ").lower()
-        if (user == "Rock" or user == "Paper" or user == "Scissors"):
-            break
-        else: 
-            print("You can only choose Rock, Paper or Scissors. Try again.")
-
-"""
-Generate random computer choice
-"""
-
-computer = random.choice(gameOptions)
-
-"""
-Print results
-"""
-
-print("You: ", user)
-print("Computer: ", computer)
-result = whoIsTheWinner(user, computer)
+print("Game over! Thanks for playing")
+print("You scored: ", userScore, "Computer: ", computerScore)
+print("Ties: ", tiedScore)
+print("Click on RUN PROGRAM to play again")
