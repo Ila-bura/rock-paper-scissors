@@ -15,9 +15,7 @@ print("-------------------------------------------")
 
 
 """
-Create game variables
-Function to kick off the game. Check if the option typed is valid.
-Show option to abandon the game.
+Create game variables to store the scores.
 """
 
 userScore = 0
@@ -26,7 +24,8 @@ tiedScore = 0
 gameOptions = ["rock", "paper", "scissors"]
 
 """
-Ask the user if they need a refresher of the rules of the game.
+While loop to ask the user if they need a refresher of the rules of the game.
+Check for valid input and prompt the user to enter the two acceptable options.
 """
 
 while True:
@@ -35,11 +34,15 @@ while True:
         print("Rock beats Scissors, Scissors beat Paper, Paper beats Rock")
         break
     elif rulesRecap == "n":
-        # code to continue without refresher
+        # code to continue without the recap
         break
     else:
         print("Invalid input. Please enter Y or N.")
 
+"""
+Function to kick off the game. Check if the option typed is valid.
+Show option to abandon the game.
+"""
 
 while True:
     userTurn = input("\nChoose Rock, Paper or Scissors or Q to quit: ").lower()
@@ -57,15 +60,15 @@ while True:
     print("Computer chose", computerTurn.capitalize() + ".")
 
     if userTurn == "rock" and computerTurn == "scissors":
-        print("Yay, you won!")
+        print("Yay, well done!")
         userScore += 1
 
     elif userTurn == "paper" and computerTurn == "rock":
-        print("Yay, you won!")
+        print("Yay, how lucky!")
         userScore += 1
 
     elif userTurn == "scissors" and computerTurn == "paper":
-        print("Yay, you won!")
+        print("Yay, way to go!")
         userScore += 1
 
     elif userTurn == "scissors" and computerTurn == "rock":
@@ -73,18 +76,32 @@ while True:
         computerScore += 1
 
     elif userTurn == "paper" and computerTurn == "scissors":
-        print("Sorry, you lost!")
+        print("Sorry, no luck!")
         computerScore += 1
 
     elif userTurn == "rock" and computerTurn == "paper":
-        print("Sorry, you lost!")
+        print("Sorry, no points for you!")
         computerScore += 1
 
     else:
-        print("It's a tie, play once again!")
+        print("It's a tie, play again!")
         tiedScore += 1
-
-print("Game over! Thanks for playing")
-print("You scored: ", userScore, "Computer: ", computerScore)
-print("Ties: ", tiedScore)
-print("Click on RUN PROGRAM to play again")
+    # if statement to keep track of scores
+    if userScore == 3 or computerScore == 3:
+        print("-------------------------------------------")
+        print("Game over!")
+        if userScore > computerScore:
+            print("You won the game!")
+            print("You scored: ", userScore, "Computer: ", computerScore)
+            print("Ties: ", tiedScore)
+            print("-------------------------------------------")
+            print("Thanks for playing!")
+            print("Click on RUN PROGRAM to play again")
+        else:
+            print("Computer won the game!")
+            print("You scored: ", userScore, "Computer: ", computerScore)
+            print("Ties: ", tiedScore)
+            print("-------------------------------------------")
+            print("Losing sucks, but thanks for playing!")
+            print("Click on RUN PROGRAM to give it another go")
+        break
