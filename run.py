@@ -11,6 +11,7 @@ print("1. It first appeared in China in the 17th century.")
 print("2. Statistically, people tend to choose Scissors in the first round")
 print("and Rock in the second.")
 print("Let's play!")
+print("-------------------------------------------")
 
 
 """
@@ -23,6 +24,22 @@ userScore = 0
 computerScore = 0
 tiedScore = 0
 gameOptions = ["rock", "paper", "scissors"]
+
+"""
+Ask the user if they need a refresher of the rules of the game.
+"""
+
+while True:
+    rulesRecap = input("Do you want a refresher of the rules? Y/N: ").lower()
+    if rulesRecap == "y":
+        print("Rock beats Scissors, Scissors beat Paper, Paper beats Rock")
+        break
+    elif rulesRecap == "n":
+        # code to continue without refresher
+        break
+    else:
+        print("Invalid input. Please enter Y or N.")
+
 
 while True:
     userTurn = input("\nChoose Rock, Paper or Scissors or Q to quit: ").lower()
