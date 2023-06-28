@@ -6,11 +6,11 @@ Initial print statements to greet the user and introduce the game
 
 print("Welcome to the game of Rock Paper Scissors!")
 print("-------------------------------------------")
-print("Two fun facts about this game:")
+print("Two fun facts:")
 print("1. It first appeared in China in the 17th century.")
 print("2. Statistically, people tend to choose Scissors in the first round")
 print("and Rock in the second.")
-print("Let's play!")
+print("Now, let's play!")
 print("-------------------------------------------")
 
 
@@ -29,9 +29,11 @@ Check for valid input and prompt the user to enter the two acceptable options.
 """
 
 while True:
-    rulesRecap = input("Do you want a refresher of the rules? Y/N: ").lower()
+    rulesRecap = input("Do you need a refresher of the rules? Y/N: ").lower()
     if rulesRecap == "y":
-        print("Rock beats Scissors, Scissors beat Paper, Paper beats Rock")
+        print("- Rock beats Scissors, Scissors beat Paper, Paper beats Rock")
+        print("- Every turn you win, you score 1 point")
+        print("- To win the game you need a total of 3 points")
         break
     elif rulesRecap == "n":
         # code to continue without the recap
@@ -50,7 +52,7 @@ while True:
         break
     if userTurn not in gameOptions:
         print("Invalid input: you can only choose Rock, Paper or Scissors.")
-        print("Please, try again!")
+        print("Please, check your spelling and try again!")
         continue
 
     random_number = random.randint(0, 2)
@@ -60,15 +62,15 @@ while True:
     print("Computer chose", computerTurn.capitalize() + ".")
 
     if userTurn == "rock" and computerTurn == "scissors":
-        print("Yay, well done!")
+        print("Well done you!")
         userScore += 1
 
     elif userTurn == "paper" and computerTurn == "rock":
-        print("Yay, how lucky!")
+        print("Yay, you're lucky!")
         userScore += 1
 
     elif userTurn == "scissors" and computerTurn == "paper":
-        print("Yay, way to go!")
+        print("1 point for you, way to go!")
         userScore += 1
 
     elif userTurn == "scissors" and computerTurn == "rock":
@@ -96,12 +98,12 @@ while True:
             print("Ties: ", tiedScore)
             print("-------------------------------------------")
             print("Thanks for playing!")
-            print("Click on RUN PROGRAM to play again")
+            print("Click on RUN PROGRAM for another round")
         else:
             print("Computer won the game!")
             print("You scored: ", userScore, "Bot scored: ", computerScore)
             print("Ties: ", tiedScore)
             print("-------------------------------------------")
             print("Losing sucks, but thanks for playing!")
-            print("Click on RUN PROGRAM to give it another go")
+            print("Click RUN PROGRAM to give it another go.")
         break
