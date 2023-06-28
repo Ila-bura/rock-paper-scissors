@@ -86,20 +86,20 @@ while True:
     else:
         print("It's a tie, play again!")
         tiedScore += 1
-    # if statement to keep track of scores
+    # function to show final scores as soon as 3 points are awarded
     if userScore == 3 or computerScore == 3:
         print("-------------------------------------------")
         print("Game over!")
         if userScore > computerScore:
             print("You won the game!")
-            print("You scored: ", userScore, "Computer: ", computerScore)
+            print("You scored: ", userScore, "Bot scored: ", computerScore)
             print("Ties: ", tiedScore)
             print("-------------------------------------------")
             print("Thanks for playing!")
             print("Click on RUN PROGRAM to play again")
         else:
             print("Computer won the game!")
-            print("You scored: ", userScore, "Computer: ", computerScore)
+            print("You scored: ", userScore, "Bot scored: ", computerScore)
             print("Ties: ", tiedScore)
             print("-------------------------------------------")
             print("Losing sucks, but thanks for playing!")
