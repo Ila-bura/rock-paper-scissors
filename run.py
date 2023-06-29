@@ -47,7 +47,7 @@ Show option to abandon the game.
 """
 
 while True:
-    userTurn = input("\nChoose Rock, Paper or Scissors or Q to quit: ").lower()
+    userTurn = input("\nPick Rock, Paper, Scissors or Q to quit: ").lower()
     if userTurn == "q":
         break
     if userTurn not in gameOptions:
@@ -98,12 +98,18 @@ while True:
             print("Ties: ", tiedScore)
             print("-------------------------------------------")
             print("Thanks for playing!")
-            print("Click on RUN PROGRAM for another round")
         else:
             print("Computer won the game!")
             print("You scored: ", userScore, "Computer scored: ", botScore)
             print("Ties: ", tiedScore)
             print("-------------------------------------------")
             print("Losing sucks, but thanks for playing!")
-            print("Click RUN PROGRAM to give it another go.")
-        break
+    # function to ask the user to play agin and if so, reset the scores
+        playAgain = input("Do you want to give it another go? (Y/N): ")
+        if playAgain.lower() != "n":
+            userScore = 0
+            botScore = 0
+            tiedScore = 0
+            userTurn
+        else:
+            break
