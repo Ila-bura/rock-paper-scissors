@@ -19,7 +19,7 @@ Create game variables to store the scores.
 """
 
 userScore = 0
-computerScore = 0
+botScore = 0
 tiedScore = 0
 gameOptions = ["rock", "paper", "scissors"]
 
@@ -31,7 +31,7 @@ Check for valid input and prompt the user to enter the two acceptable options.
 while True:
     rulesRecap = input("Do you need a refresher of the rules? Y/N: ").lower()
     if rulesRecap == "y":
-        print("- Rock beats Scissors, Scissors beat Paper, Paper beats Rock")
+        print("- Rock smashes Scissors, Scissors cut Paper, Paper covers Rock")
         print("- Every turn you win, you score 1 point")
         print("- To win the game you need a total of 3 points")
         break
@@ -62,46 +62,46 @@ while True:
     print("Computer chose", computerTurn.capitalize() + ".")
 
     if userTurn == "rock" and computerTurn == "scissors":
-        print("Well done you!")
+        print("Rock smashes scissors! You win!")
         userScore += 1
 
     elif userTurn == "paper" and computerTurn == "rock":
-        print("Yay, you're lucky!")
+        print("Paper covers rock! You win!")
         userScore += 1
 
     elif userTurn == "scissors" and computerTurn == "paper":
-        print("1 point for you, way to go!")
+        print("Scissors cuts paper! You win!")
         userScore += 1
 
     elif userTurn == "scissors" and computerTurn == "rock":
-        print("Sorry, you lost!")
-        computerScore += 1
+        print("Rock smashes scissors! You lose!")
+        botScore += 1
 
     elif userTurn == "paper" and computerTurn == "scissors":
-        print("Sorry, no luck!")
-        computerScore += 1
+        print("Scissors cuts paper. You lose!")
+        botScore += 1
 
     elif userTurn == "rock" and computerTurn == "paper":
-        print("Sorry, no points for you!")
-        computerScore += 1
+        print("Paper covers rock! You lose!")
+        botScore += 1
 
     else:
-        print("It's a tie, play again!")
+        print("It's a tie! Play again")
         tiedScore += 1
     # function to show final scores as soon as 3 points are awarded
-    if userScore == 3 or computerScore == 3:
+    if userScore == 3 or botScore == 3:
         print("-------------------------------------------")
         print("Game over!")
-        if userScore > computerScore:
+        if userScore > botScore:
             print("You won the game!")
-            print("You scored: ", userScore, "Bot scored: ", computerScore)
+            print("You scored: ", userScore, "Computer scored: ", botScore)
             print("Ties: ", tiedScore)
             print("-------------------------------------------")
             print("Thanks for playing!")
             print("Click on RUN PROGRAM for another round")
         else:
             print("Computer won the game!")
-            print("You scored: ", userScore, "Bot scored: ", computerScore)
+            print("You scored: ", userScore, "Computer scored: ", botScore)
             print("Ties: ", tiedScore)
             print("-------------------------------------------")
             print("Losing sucks, but thanks for playing!")
