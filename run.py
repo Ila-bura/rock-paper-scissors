@@ -18,9 +18,6 @@ print("-------------------------------------------")
 Create game variables to store the scores.
 """
 
-userScore = 0
-botScore = 0
-tiedScore = 0
 gameOptions = ["rock", "paper", "scissors"]
 
 """
@@ -51,15 +48,19 @@ Show option to abandon the game.
 
 
 def get_user_selection():
+    gameOptions = ["rock", "paper", "scissors"]
+    
     userTurn = input("\nPick Rock, Paper, Scissors or Q to quit: ").lower()
     if userTurn == "q":
-        return print("You chose", userTurn.capitalize() + ".")
+        return 
     if userTurn not in gameOptions:
         print("Invalid input: you can only choose Rock, Paper or Scissors.")
-        print("Please, check your spelling and try again!")      
+        print("Please, check your spelling and try again!") 
+
+    print("You chose", userTurn.capitalize() + ".")     
 
 
-def get_bot_selection(userTurn):
+def get_bot_selection():
     random_number = random.randint(0, 2)
     # index number: rock 0, paper 1, scissors 2
     computerTurn = gameOptions[random_number]
@@ -67,6 +68,10 @@ def get_bot_selection(userTurn):
 
 
 def decide_winner(userTurn, computerTurn):
+    userScore = 0
+    botScore = 0
+    tiedScore = 0
+
     if userTurn == "rock" and computerTurn == "scissors":
         print("Rock smashes scissors! You win!")
         userScore += 1
@@ -94,6 +99,8 @@ def decide_winner(userTurn, computerTurn):
     else:
         print("It's a tie! Play again")
         tiedScore += 1
+
+    return userScore, botScore, tiedScore
     # function to show final scores as soon as 3 points are awarded
 
 
@@ -126,12 +133,15 @@ def playAgain():
     else:
         pass
 
+
 def main():
     """
     Call all program functions.
     """
     display_rules()
-    decide_winner(userTurn, computerTurn)
+    get_user_selection()
+    get_bot_selection()
+    decide_winner(userScore, botScore, tiedScore)
     show_scores()
     playAgain()
 
