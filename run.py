@@ -44,6 +44,41 @@ def show_results(user_choice, bot_choice):
     else:
         print("You lose!")
 
+
+def main():
+    user_score = 0
+    bot_score = 0
+    tie_score = 0
+
+    while True:
+        user_choice = userTurn()
+
+        if user_choice == "q":
+            print("Game over! Thanks for playing!")
+            break
+
+        bot_choice = get_bot_selection()
+        print("Bot chose:", bot_choice)
+        
+        print_results(user_choice, bot_choice)
+
+        if user_choice == bot_choice:
+            tie_score += 1
+        elif (user_choice == "rock" and bot_choice == "scissors") or 
+        (user_choice == "paper" and bot_choice == "rock") or 
+        (user_choice == "scissors" and bot_choice == "paper"):
+            user_score += 1
+        else:
+            bot_score += 1
+        
+        print("You scored:", user_score)
+        print("Bot scored:", bot_score)
+        print("Ties:", tie_score
+
+        if user_score == 3 or bot_score == 3:
+            print("Game over!")
+            break
+        
 """
 Initial print statements to greet the user and introduce the game
 """
