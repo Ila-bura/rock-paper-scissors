@@ -2,42 +2,6 @@ import random
 
  gameOptions = ["rock", "paper", "scissors"]
 
-
-def userTurn():
-    while True:
-        choice = input("\nPick Rock, Paper, Scissors or Q to quit: ").lower()
-        if choice in gameOptions or choice == "q":
-            return choice
-        else:
-            print("Invalid input! Pick one of the options or type Q to quit.")
-
-def get_bot_selection():
-    random_number = random.randint(0, 2)
-    # index number: rock 0, paper 1, scissors 2
-    return gameOptions[random_number]
-
-"""
-Initial print statements to greet the user and introduce the game
-"""
-
-print("Welcome to the game of Rock Paper Scissors!")
-print("-------------------------------------------")
-print("Two fun facts:")
-print("1. It first appeared in China in the 17th century.")
-print("2. Statistically, people tend to choose Scissors in the first round")
-print("and Rock in the second.")
-print("Now, let's play!")
-print("-------------------------------------------")
-
-
-"""
-Create game variables to store the scores.
-"""
-
-"""
-While loop to ask the user if they need a refresher of the rules of the game.
-Check for valid input and prompt the user to enter the two acceptable options.
-"""
 # function to display the rules
 
 
@@ -55,23 +19,56 @@ def display_rules():
         print("Invalid input. Please enter Y or N.")
 
 
+def userTurn():
+    while True:
+        choice = input("\nPick Rock, Paper, Scissors or Q to quit: ").lower()
+        if choice in gameOptions or choice == "q":
+            return choice
+        else:
+            print("Invalid input! Pick one of the options or type Q to quit.")
+            print("Please, check your spelling and try again!")
+
+
+def get_bot_selection():
+    random_number = random.randint(0, 2)
+    # index number: rock 0, paper 1, scissors 2
+    return gameOptions[random_number]
+
+
+def show_results(user_choice, bot_choice):
+    if user_choice == bot_choice:
+        print("It's a tie! Play again.")
+    elif (user_choice == "rock" and bot_choice == "scissors") or (user_choice == "paper" 
+    and bot_choice == "rock") or (user_choice == "scissors" and bot_choice == "paper"):
+        print("You win!")
+    else:
+        print("You lose!")
+
+"""
+Initial print statements to greet the user and introduce the game
+"""
+
+print("Welcome to the game of Rock Paper Scissors!")
+print("-------------------------------------------")
+print("Two fun facts:")
+print("1. It first appeared in China in the 17th century.")
+print("2. Statistically, people tend to choose Scissors in the first round")
+print("and Rock in the second.")
+print("Now, let's play!")
+print("-------------------------------------------")
+
+
+"""
+While loop to ask the user if they need a refresher of the rules of the game.
+Check for valid input and prompt the user to enter the two acceptable options.
+"""
+
+
 """
 Function to kick off the game. Check if the option typed is valid.
 Show option to abandon the game.
 """
-
-
-def get_user_selection():
-    gameOptions = ["rock", "paper", "scissors"]
-
-    userTurn = input("\nPick Rock, Paper, Scissors or Q to quit: ").lower()
-    if userTurn == "q":
-        return 
-    if userTurn not in gameOptions:
-        print("Invalid input: you can only choose Rock, Paper or Scissors.")
-        print("Please, check your spelling and try again!") 
-
-    print("You chose", userTurn.capitalize() + ".")     
+     
 
 
 def play_round(userTurn, computerTurn):
