@@ -1,5 +1,6 @@
 import random
 
+
 """
 Initial print statements to greet the user and introduce the game
 """
@@ -18,13 +19,11 @@ print("-------------------------------------------")
 Create game variables to store the scores.
 """
 
-gameOptions = ["rock", "paper", "scissors"]
-
 """
 While loop to ask the user if they need a refresher of the rules of the game.
 Check for valid input and prompt the user to enter the two acceptable options.
 """
-# function to disply the rules
+# function to display the rules
 
 
 def display_rules():
@@ -49,7 +48,7 @@ Show option to abandon the game.
 
 def get_user_selection():
     gameOptions = ["rock", "paper", "scissors"]
-    
+
     userTurn = input("\nPick Rock, Paper, Scissors or Q to quit: ").lower()
     if userTurn == "q":
         return 
@@ -60,47 +59,38 @@ def get_user_selection():
     print("You chose", userTurn.capitalize() + ".")     
 
 
+def play_round(userTurn, computerTurn):
+    if userTurn == computerTurn:
+        print("It's a tie")
+    elif userTurn == "rock":
+        if computerTurn == "scissors":
+            print("Rock smashes scissors! You win!")
+        else:
+            print("You lost")
+    elif userTurn == "paper":
+        if computerTurn == "rock":
+            print("Paper covers rock! You win!")
+        else:
+            print("You lost")
+    elif userTurn == "scissors":
+        if computerTurn == "paper":
+            print("Scissors cuts paper! You win!")
+        else:
+            print("You lost")
+
+
 def get_bot_selection():
+    gameOptions = ["rock", "paper", "scissors"]
     random_number = random.randint(0, 2)
     # index number: rock 0, paper 1, scissors 2
-    computerTurn = gameOptions[random_number]
-    print("Computer chose", computerTurn.capitalize() + ".")
+    return gameOptions[random_number]
 
-
-def decide_winner(userTurn, computerTurn):
+def kick_off_game:
     userScore = 0
-    botScore = 0
-    tiedScore = 0
+        botScore = 0
+        tiedScore = 0
 
-    if userTurn == "rock" and computerTurn == "scissors":
-        print("Rock smashes scissors! You win!")
-        userScore += 1
-
-    elif userTurn == "paper" and computerTurn == "rock":
-        print("Paper covers rock! You win!")
-        userScore += 1
-
-    elif userTurn == "scissors" and computerTurn == "paper":
-        print("Scissors cuts paper! You win!")
-        userScore += 1
-
-    elif userTurn == "scissors" and computerTurn == "rock":
-        print("Rock smashes scissors! You lose!")
-        botScore += 1
-
-    elif userTurn == "paper" and computerTurn == "scissors":
-        print("Scissors cuts paper. You lose!")
-        botScore += 1
-
-    elif userTurn == "rock" and computerTurn == "paper":
-        print("Paper covers rock! You lose!")
-        botScore += 1
-
-    else:
-        print("It's a tie! Play again")
-        tiedScore += 1
-
-    return userScore, botScore, tiedScore
+    
     # function to show final scores as soon as 3 points are awarded
 
 
@@ -141,7 +131,7 @@ def main():
     display_rules()
     get_user_selection()
     get_bot_selection()
-    decide_winner(userScore, botScore, tiedScore)
+    decide_winner()
     show_scores()
     playAgain()
 
