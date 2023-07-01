@@ -1,5 +1,20 @@
 import random
 
+ gameOptions = ["rock", "paper", "scissors"]
+
+
+def userTurn():
+    while True:
+        choice = input("\nPick Rock, Paper, Scissors or Q to quit: ").lower()
+        if choice in gameOptions or choice == "q":
+            return choice
+        else:
+            print("Invalid input! Pick one of the options or type Q to quit.")
+
+def get_bot_selection():
+    random_number = random.randint(0, 2)
+    # index number: rock 0, paper 1, scissors 2
+    return gameOptions[random_number]
 
 """
 Initial print statements to greet the user and introduce the game
@@ -79,16 +94,10 @@ def play_round(userTurn, computerTurn):
             print("You lost")
 
 
-def get_bot_selection():
-    gameOptions = ["rock", "paper", "scissors"]
-    random_number = random.randint(0, 2)
-    # index number: rock 0, paper 1, scissors 2
-    return gameOptions[random_number]
-
-def kick_off_game:
+def kick_off_game():
     userScore = 0
-        botScore = 0
-        tiedScore = 0
+    botScore = 0
+    tiedScore = 0
 
     
     # function to show final scores as soon as 3 points are awarded
