@@ -23,13 +23,12 @@ Check for valid input and prompt the user to enter the two acceptable options.
 
 
 def display_rules():
-    rulesRecap = input("Do you need a refresher of the rules? Y/N: ").lower()
+    rulesRecap = input("Do you need a refresher of the rules? Y/N:\n").lower()
     if rulesRecap == "y":
         print("- Rock smashes Scissors, Scissors cut Paper, Paper covers Rock")
         print("- Every turn you win, you score 1 point")
         print("- To win the game you need a total of 3 points")
     elif rulesRecap == "n":
-        # code to continue without the recap
         pass
     else:
         print("Invalid input. Please enter Y or N.")
@@ -65,8 +64,9 @@ def show_results(userTurn, bot_choice):
 
 
 """
-Function to kick off the game. Check if the option typed is valid.
-Show option to abandon the game.
+Function to kick off the game. Prompt the user to choose an option.
+Check if the option typed is valid.
+Show option "q" to abandon the game.
 """
 
 
@@ -76,7 +76,7 @@ def let_us_play():
     tie_score = 0
 
     while True:
-        userTurn = input("\nPick Rock, Paper, Scissors or Q to quit: ").lower()
+        userTurn = input("\nPick Rock/Paper/Scissors or Q to quit:\n").lower()
 
         if userTurn == "q":
             print("Game over! Thanks for playing!")
@@ -113,7 +113,7 @@ def let_us_play():
 
 def main():
     """
-    Call all program functions.
+    Call all game functions.
     """
     display_rules()
     let_us_play()
