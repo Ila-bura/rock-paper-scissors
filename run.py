@@ -2,7 +2,6 @@ import random
 
 gameOptions = ["rock", "paper", "scissors"]
 
-
 """
 Initial print statements to greet the user and introduce the game
 """
@@ -12,7 +11,7 @@ print("-------------------------------------------")
 print("Two fun facts:")
 print("1. It first appeared in China in the 17th century.")
 print("2. Statistically, people tend to choose Scissors in the first round")
-print("and Rock in the second.")
+print("   and Rock in the second.")
 print("Now, let's play!")
 print("-------------------------------------------")
 
@@ -28,31 +27,11 @@ def display_rules():
         print("- Rock smashes Scissors, Scissors cut Paper, Paper covers Rock")
         print("- Every turn you win, you score 1 point")
         print("- To win the game you need a total of 3 points")
-        return
     elif rulesRecap == "n":
         # code to continue without the recap
-        return
+        pass
     else:
         print("Invalid input. Please enter Y or N.")
-
-
-display_rules()
-
-
-"""
-Function to kick off the game. Check if the option typed is valid.
-Show option to abandon the game.
-"""
-
-
-def userTurn():
-    while True:
-        userTurn = input("\nPick Rock, Paper, Scissors or Q to quit: ").lower()
-        if userTurn == "q":
-            break
-        if userTurn not in gameOptions:
-            print("Invalid input! Pick one of the options or type Q to quit.")
-            print("Please, check your spelling and try again!")
 
 
 def get_bot_selection():
@@ -65,14 +44,18 @@ def get_bot_selection():
 def show_results(userTurn, bot_choice):
     if userTurn == bot_choice:
         print("It's a tie! Play again.")
-    elif (userTurn == "rock" and bot_choice == "scissors"):
-        print("You win!")
-    elif (userTurn == "paper" and bot_choice == "rock"):
-        print("You win!")
-    elif (userTurn == "scissors" and bot_choice == "paper"):
+    elif (userTurn == "rock" and bot_choice == "scissors") or \
+            (userTurn == "paper" and bot_choice == "rock") or \
+            (userTurn == "scissors" and bot_choice == "paper"):
         print("You win!")
     else:
         print("You lose!")
+
+
+"""
+Function to kick off the game. Check if the option typed is valid.
+Show option to abandon the game.
+"""
 
 
 def let_us_play():
@@ -81,30 +64,46 @@ def let_us_play():
     tie_score = 0
 
     while True:
+        userTurn = input("\nPick Rock, Paper, Scissors or Q to quit: ").lower()
+
         if userTurn == "q":
             print("Game over! Thanks for playing!")
             break
+
+        if userTurn not in gameOptions:
+            print("Invalid input: you can only choose Rock, Paper or Scissors")
+            print("Please, check your spelling and try again!")
+            continue
 
         bot_choice = get_bot_selection()
         print("Bot chose:", bot_choice)
 
         if userTurn == bot_choice:
             tie_score += 1
-        elif (userTurn == "rock" and bot_choice == "scissors"):
+            print("It's a tie!")
+        elif (userTurn == "rock" and bot_choice == "scissors") or \
+                (userTurn == "paper" and bot_choice == "rock") or \
+                (userTurn == "scissors" and bot_choice == "paper"):
             user_score += 1
-        elif (userTurn == "paper" and bot_choice == "rock"):
-            user_score += 1
-        elif (userTurn == "scissors" and bot_choice == "paper"):
-            user_score += 1
+            print("You win!")
         else:
             bot_score += 1
-               
+            print("You lose!")
+
         if user_score == 3 or bot_score == 3:
             print("Game over!")
-            break
-
             print("You scored:", user_score)
             print("Bot scored:", bot_score)
             print("Ties:", tie_score)
+            break
 
-userTurn()
+
+def main():
+    """
+    Call all program functions.
+    """
+    display_rules()
+    let_us_play()
+
+
+main()
