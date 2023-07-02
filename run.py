@@ -1,9 +1,10 @@
 import random
-
+# list of acceptable options for the game
 gameOptions = ["rock", "paper", "scissors"]
 
 """
-Initial print statements to greet the user and introduce the game
+Initial print statements to greet the user,
+provide fun facts and introduce the game
 """
 
 print("Welcome to the game of Rock Paper Scissors!")
@@ -16,7 +17,7 @@ print("Now, let's play!")
 print("-------------------------------------------")
 
 """
-function to display the rules
+Function to display the rules
 Check for valid input and prompt the user to enter the two acceptable options.
 """
 
@@ -34,11 +35,22 @@ def display_rules():
         print("Invalid input. Please enter Y or N.")
 
 
+"""
+Function to store the random choice of the computer
+Index number: rock 0, paper 1, scissors 2
+"""
+
+
 def get_bot_selection():
     random_number = random.randint(0, 2)
-    # index number: rock 0, paper 1, scissors 2
     bot_choice = gameOptions[random_number]
     return bot_choice
+
+
+"""
+Function to display the game results at every turn
+
+"""
 
 
 def show_results(userTurn, bot_choice):
@@ -76,11 +88,12 @@ def let_us_play():
             continue
 
         bot_choice = get_bot_selection()
+        print("You chose:", userTurn)
         print("Bot chose:", bot_choice)
 
         if userTurn == bot_choice:
             tie_score += 1
-            print("It's a tie!")
+            print("It's a tie! Play again!")
         elif (userTurn == "rock" and bot_choice == "scissors") or \
                 (userTurn == "paper" and bot_choice == "rock") or \
                 (userTurn == "scissors" and bot_choice == "paper"):
