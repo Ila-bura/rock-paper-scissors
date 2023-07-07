@@ -118,10 +118,17 @@ def let_us_play():
                 print("\n Bot won the game!")
                 print("\n You scored:", user_score)
                 print("\n Bot scored:", bot_score)
-                print("\n Ties: ", tie_score)
+                print("\n Ties:", tie_score)
                 print("-------------------------------------------")
                 print("\n Losing sucks, but thanks for playing!")
                 break
+
+
+def play_again():
+    want_more = input("\n Do you want to give it another go? (Y/N): ").lower()
+    if want_more == "y":
+        print("\n Here you go, best of luck!")
+        let_us_play()
 
 
 def main():
@@ -130,6 +137,7 @@ def main():
     """
     display_rules()
     let_us_play()
+    play_again()
 
 
 main()
