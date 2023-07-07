@@ -78,7 +78,7 @@ def play_again():
     while True:
         want_more = input("\n Want to give it another go? (Y/N): ").lower()
 
-        if want_more != "n":
+        if want_more == "y":
             print("\n Here you go, best of luck!")
             return True
 
@@ -146,8 +146,9 @@ def let_us_play():
                 print("\n Ties:", tie_score)
                 print("\n Losing sucks, but thanks for playing!")
                 print("-------------------------------------------")
-            play_again()
-            break
+
+            if not play_again():
+                break
 
 
 def main():
