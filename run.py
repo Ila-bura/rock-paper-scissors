@@ -68,6 +68,29 @@ def show_results(userTurn, bot_choice):
 
 
 """
+Function to ask the user if they want to play another round
+at the end of the first game.
+
+"""
+
+
+def play_again():
+    while True:
+        want_more = input("\n Want to give it another go? (Y/N): ").lower()
+
+        if want_more != "n":
+            print("\n Here you go, best of luck!")
+            return True
+
+        elif want_more == "n":
+            print("\n Thanks for playing!")
+            return False
+
+        else:
+            print("\n Invalid input. Please enter Y or N.")
+
+
+"""
 Function to kick off the game. Prompt the user to choose an option.
 Check if the option typed is valid.
 Show option "q" to abandon the game.
@@ -122,28 +145,9 @@ def let_us_play():
                 print("\n Bot scored:", bot_score)
                 print("\n Ties:", tie_score)
                 print("\n Losing sucks, but thanks for playing!")
-            print("-------------------------------------------")
+                print("-------------------------------------------")
             play_again()
-
-
-"""
-Function to ask the user if they want to play another round
-at the end of the first game.
-
-"""
-
-
-def play_again():
-    want_more = input("\n Do you want to give it another go? (Y/N): ").lower()
-    if want_more == "y":
-        print("\n Here you go, best of luck!")
-        let_us_play()
-    elif want_more == "n":
-        print("\n Thanks for playing!")
-        break
-    else:
-        print("\n Invalid input. Please enter Y or N.")
-        play_again()
+            break
 
 
 def main():
