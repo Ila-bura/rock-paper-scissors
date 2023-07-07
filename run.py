@@ -23,7 +23,7 @@ Check for valid input and prompt the user to enter the two acceptable options.
 
 
 def display_rules():
-    rulesRecap = input("Do you need a refresher of the rules? Y/N:\n").lower()
+    rulesRecap = input("\n Do you need to refresh the rules? Y/N:\n").lower()
     if rulesRecap == "y":
         print("\n - Rock smashes Scissors, Scissors cut Paper")
         print("\n - Paper covers Rock")
@@ -77,7 +77,7 @@ def let_us_play():
     tie_score = 0
 
     while True:
-        userTurn = input("\nPick Rock/Paper/Scissors or Q to quit:\n").lower()
+        userTurn = input("\n Pick Rock/Paper/Scissors or Q to quit:\n").lower()
 
         if userTurn == "q":
             print("\n Game over! Thanks for playing!")
@@ -95,7 +95,7 @@ def let_us_play():
 
         if userTurn == bot_choice:
             tie_score += 1
-            print("\n It's a tie! Play again!")
+            print("\n It's a tie, play again!")
         elif (userTurn == "rock" and bot_choice == "scissors") or \
                 (userTurn == "paper" and bot_choice == "rock") or \
                 (userTurn == "scissors" and bot_choice == "paper"):
@@ -106,11 +106,22 @@ def let_us_play():
             print("\n You lose!")
 
         if user_score == 3 or bot_score == 3:
+            print("-------------------------------------------")
             print("\n Game over!")
-            print("\n You scored:", user_score)
-            print("\n Bot scored:", bot_score)
-            print("Ties:", tie_score)
-            break
+            if user_score > bot_score:
+                print("\n You won the game!")
+                print("\n You scored:", user_score)
+                print("\n Bot scored:", bot_score)
+                print("\n Ties:", tie_score)
+                break
+            else:
+                print("\n Bot won the game!")
+                print("\n You scored:", user_score)
+                print("\n Bot scored:", bot_score)
+                print("\n Ties: ", tie_score)
+                print("-------------------------------------------")
+                print("\n Losing sucks, but thanks for playing!")
+                break
 
 
 def main():
