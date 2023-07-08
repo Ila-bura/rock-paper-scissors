@@ -1,9 +1,9 @@
 import random
 # constant with a list of acceptable options for the game
-gameOptions = ["rock", "paper", "scissors"]
+game_options = ["rock", "paper", "scissors"]
 
 
-# global variables for scores
+# variables for scores
 user_score = 0
 bot_score = 0
 tie_score = 0
@@ -11,10 +11,10 @@ tie_score = 0
 
 # function to ask if the user needs a refresher of the rules
 def ask_rules_refresh():
-    rulesRecap = input("\n Do you need to refresh the rules? Y/N:\n").lower()
-    if rulesRecap == "y":
+    rules_recap = input("\n Do you need to refresh the rules? Y/N:\n").lower()
+    if rules_recap == "y":
         display_rules()
-    elif rulesRecap == "n":
+    elif rules_recap == "n":
         let_us_play()
     else:
         print("Invalid input. Please enter Y or N.")
@@ -34,44 +34,36 @@ def display_rules():
 
 # function to get user choice
 def get_user_selection():
-    userTurn = input("\n Pick Rock/Paper/Scissors or Q to quit:\n").lower()
-    if userTurn == "q":
+    user_turn = input("\n Pick Rock/Paper/Scissors or Q to quit:\n").lower()
+    if user_turn == "q":
         print("\n Game over! Thanks for playing!")
         return None
-    elif userTurn not in gameOptions:
+    elif user_turn not in game_options:
         print("\n Invalid input!")
         print("\n You can only choose Rock, Paper, or Scissors.")
         print("\n Please check your spelling and try again!")
         return get_user_selection()
     else:
-        return userTurn
+        return user_turn
 
 
 # function to get computer choice
 def get_bot_selection():
     random_number = random.randint(0, 2)
-    bot_choice = gameOptions[random_number]
+    bot_choice = game_options[random_number]
     return bot_choice
 
 
 # function to establish the winner
-def decide_winner(userTurn, bot_choice):
-    if userTurn == bot_choice:
+def decide_winner(user_turn, bot_choice):
+    if user_turn == bot_choice:
         return "tie"
-    elif (userTurn == "rock" and bot_choice == "scissors") or \
-            (userTurn == "paper" and bot_choice == "rock") or \
-            (userTurn == "scissors" and bot_choice == "paper"):
+    elif (user_turn == "rock" and bot_choice == "scissors") or \
+            (user_turn == "paper" and bot_choice == "rock") or \
+            (user_turn == "scissors" and bot_choice == "paper"):
         return "user"
     else:
         return "bot"
-
-
-# function to reset the scores to zero
-def reset_scores():
-    global user_score, bot_score, tie_score
-    user_score = 0
-    bot_score = 0
-    tie_score = 0
 
 
 # function to update the scores
@@ -88,32 +80,27 @@ def update_scores(result):
 """
 Function to kick off the game. Prompt the user to choose an option.
 Check if the option typed is valid.
-Show option "q" to abandon the game.
 """
 
 
 def let_us_play():
-    global user_score, bot_score, tie_score
     while True:
-        userTurn = get_user_selection()
-        if userTurn is None:
+        user_turn = get_user_selection()
+        if user_turn is None:
             break
 
         bot_choice = get_bot_selection()
-        print("\n You chose:", userTurn)
+        print("\n You chose:", user_turn)
         print("\n Bot chose:", bot_choice)
 
-        result = decide_winner(userTurn, bot_choice)
+        result = decide_winner(user_turn, bot_choice)
         update_scores(result)
 
         if result == "tie":
-            tie_score += 1
             print("\n It's a tie, play again!")
         elif result == "user":
-            user_score += 1
             print("\n You win!")
         else:
-            bot_score += 1
             print("\n You lose!")
 
         if user_score == 3 or bot_score == 3:
@@ -131,7 +118,6 @@ def let_us_play():
 
             print("-------------------------------------------")
             print("\n Click on Run Program to play again")
-            reset_scores()
             break
 
 
