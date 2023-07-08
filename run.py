@@ -12,9 +12,20 @@ def display_rules():
     print("\n - To win the game you need a total of 3 points")
     print("-------------------------------------------")
 
+
 #function to get user choice
 def get_user_selection():
-    
+    while True:
+        userTurn = input("\n Pick Rock/Paper/Scissors or Q to quit:\n").lower()
+        if userTurn == "q":
+            print("\n Game over! Thanks for playing!")
+            return None
+        if userTurn in gameOptions:
+            return userTurn
+        print("\n Invalid input!")
+        print("\n You can only choose Rock, Paper, or Scissors.")
+        print("\n Please check your spelling and try again!")
+
 def get_bot_selection():
     random_number = random.randint(0, 2)
     bot_choice = gameOptions[random_number]
