@@ -3,6 +3,12 @@ import random
 gameOptions = ["rock", "paper", "scissors"]
 
 
+# global variables for scores
+user_score = 0
+bot_score = 0
+tie_score = 0
+
+
 # function to ask if the user needs a refresher of the rules
 def ask_rules_refresh():
     rulesRecap = input("\n Do you need to refresh the rules? Y/N:\n").lower()
@@ -23,20 +29,22 @@ def display_rules():
     print("\n - Every turn you win, you score 1 point")
     print("\n - To win the game you need a total of 3 points")
     print("-------------------------------------------")
+    return None
 
 
 # function to get user choice
 def get_user_selection():
-    while True:
-        userTurn = input("\n Pick Rock/Paper/Scissors or Q to quit:\n").lower()
-        if userTurn == "q":
-            print("\n Game over! Thanks for playing!")
-            return None
-        if userTurn in gameOptions:
-            return userTurn
+    userTurn = input("\n Pick Rock/Paper/Scissors or Q to quit:\n").lower()
+    if userTurn == "q":
+        print("\n Game over! Thanks for playing!")
+        return None
+    elif userTurn not in gameOptions:
         print("\n Invalid input!")
         print("\n You can only choose Rock, Paper, or Scissors.")
         print("\n Please check your spelling and try again!")
+        return get_user_selection()
+    else:
+        return userTurn
 
 
 # function to get computer choice
@@ -60,10 +68,21 @@ def decide_winner(userTurn, bot_choice):
 
 # function to reset the scores to zero
 def reset_scores():
+    global user_score, bot_score, tie_score
     user_score = 0
     bot_score = 0
     tie_score = 0
-    return user_score, bot_score, tie_score
+
+
+# function to update the scores
+def update_scores(result):
+    global user_score, bot_score, tie_score
+    if result == "tie":
+        tie_score += 1
+    elif result == "user":
+        user_score += 1
+    else:
+        bot_score += 1
 
 
 """
@@ -74,8 +93,7 @@ Show option "q" to abandon the game.
 
 
 def let_us_play():
-    user_score, bot_score, tie_score = reset_scores()
-
+    global user_score, bot_score, tie_score
     while True:
         userTurn = get_user_selection()
         if userTurn is None:
@@ -86,6 +104,8 @@ def let_us_play():
         print("\n Bot chose:", bot_choice)
 
         result = decide_winner(userTurn, bot_choice)
+        update_scores(result)
+
         if result == "tie":
             tie_score += 1
             print("\n It's a tie, play again!")
@@ -111,6 +131,7 @@ def let_us_play():
 
             print("-------------------------------------------")
             print("\n Click on Run Program to play again")
+            reset_scores()
             break
 
 
