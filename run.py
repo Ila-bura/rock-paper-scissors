@@ -45,6 +45,20 @@ def decide_winner(userTurn, bot_choice):
     else:
         return "bot"
 
+
+# function to let user play again
+def play_again():
+    while True:
+        want_more = input("\n Want to give it another go? (Y/N): ").lower()
+        if want_more == "y":
+            print("\n Here you go, best of luck!")
+            return True
+        elif want_more == "n":
+            print("\n Thanks for playing!")
+            return False
+        print("\n Invalid input. Please enter Y or N.")
+
+
 """
 Initial print statements to greet the user,
 provide fun facts and introduce the game
