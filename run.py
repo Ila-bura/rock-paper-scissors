@@ -72,28 +72,19 @@ def let_us_play():
     tie_score = 0
 
     while True:
-        userTurn = input("\n Pick Rock/Paper/Scissors or Q to quit:\n").lower()
-
-        if userTurn == "q":
-            print("\n Game over! Thanks for playing!")
+        userTurn = get_user_selection()
+        if userTurn is None:
             break
-
-        if userTurn not in gameOptions:
-            print("\n Invalid input")
-            print("\n You can only choose Rock, Paper or Scissors")
-            print("\n Please, check your spelling and try again!")
-            continue
 
         bot_choice = get_bot_selection()
         print("\n You chose:", userTurn)
         print("\n Bot chose:", bot_choice)
 
-        if userTurn == bot_choice:
+        result = decide_winner(userTurn, bot_choice)
+        if result == "tie":
             tie_score += 1
             print("\n It's a tie, play again!")
-        elif (userTurn == "rock" and bot_choice == "scissors") or \
-                (userTurn == "paper" and bot_choice == "rock") or \
-                (userTurn == "scissors" and bot_choice == "paper"):
+        elif result == "user":
             user_score += 1
             print("\n You win!")
         else:
@@ -103,6 +94,10 @@ def let_us_play():
         if user_score == 3 or bot_score == 3:
             print("-------------------------------------------")
             print("\n Game over!")
+            print("\n You scored:", user_score)
+            print("\n Bot scored:", bot_score)
+            print("\n Ties:", tie_score)
+            
             if user_score > bot_score:
                 print("\n You won the game!")
                 print("\n You scored:", user_score)
