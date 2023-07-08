@@ -13,7 +13,7 @@ def display_rules():
     print("-------------------------------------------")
 
 
-#function to get user choice
+# function to get user choice
 def get_user_selection():
     while True:
         userTurn = input("\n Pick Rock/Paper/Scissors or Q to quit:\n").lower()
@@ -26,11 +26,24 @@ def get_user_selection():
         print("\n You can only choose Rock, Paper, or Scissors.")
         print("\n Please check your spelling and try again!")
 
+
+# function to get computer choice
 def get_bot_selection():
     random_number = random.randint(0, 2)
     bot_choice = gameOptions[random_number]
     return bot_choice
 
+
+# function to establish the winner
+def decide_winner(userTurn, bot_choice):
+    if userTurn == bot_choice:
+        return "tie"
+    elif (userTurn == "rock" and bot_choice == "scissors") or \
+            (userTurn == "paper" and bot_choice == "rock") or \
+            (userTurn == "scissors" and bot_choice == "paper"):
+        return "user"
+    else:
+        return "bot"
 
 """
 Initial print statements to greet the user,
