@@ -59,6 +59,14 @@ def play_again():
         print("\n Invalid input. Please enter Y or N.")
 
 
+# function to reset the scores to zero
+def reset_scores():
+    user_score = 0
+    bot_score = 0
+    tie_score = 0
+    return user_score, bot_score, tie_score
+
+
 """
 Function to kick off the game. Prompt the user to choose an option.
 Check if the option typed is valid.
@@ -67,45 +75,48 @@ Show option "q" to abandon the game.
 
 
 def let_us_play():
-    user_score = 0
-    bot_score = 0
-    tie_score = 0
-
     while True:
-        userTurn = get_user_selection()
-        if userTurn is None:
-            break
+        user_score, bot_score, tie_score = reset_scores()
 
-        bot_choice = get_bot_selection()
-        print("\n You chose:", userTurn)
-        print("\n Bot chose:", bot_choice)
-
-        result = decide_winner(userTurn, bot_choice)
-        if result == "tie":
-            tie_score += 1
-            print("\n It's a tie, play again!")
-        elif result == "user":
-            user_score += 1
-            print("\n You win!")
-        else:
-            bot_score += 1
-            print("\n You lose!")
-
-        if user_score == 3 or bot_score == 3:
-            print("-------------------------------------------")
-            print("\n Game over!")
-            print("\n You scored:", user_score)
-            print("\n Bot scored:", bot_score)
-            print("\n Ties:", tie_score)
-            if user_score > bot_score:
-                print("\n You won the game!")
-            else:
-                print("\n Bot won the game!"
-            print("\n Losing sucks, but thanks for playing!")
-            print("-------------------------------------------")
-
-            if not play_again():
+        while True:
+            userTurn = get_user_selection()
+            if userTurn is None:
                 break
+
+            bot_choice = get_bot_selection()
+            print("\n You chose:", userTurn)
+            print("\n Bot chose:", bot_choice)
+
+            result = decide_winner(userTurn, bot_choice)
+            if result == "tie":
+                tie_score += 1
+                print("\n It's a tie, play again!")
+            elif result == "user":
+                user_score += 1
+                print("\n You win!")
+            else:
+                bot_score += 1
+                print("\n You lose!")
+
+            if user_score == 3 or bot_score == 3:
+                print("-------------------------------------------")
+                print("\n Game over!")
+                print("\n You scored:", user_score)
+                print("\n Bot scored:", bot_score)
+                print("\n Ties:", tie_score)
+                if user_score > bot_score:
+                    print("\n You won the game!")
+                else:
+                    print("\n Bot won the game!")
+                    print("\n Losing sucks, but thanks for playing!")
+
+                print("-------------------------------------------")
+
+                if not play_again():
+                    return
+
+        if not play_again():
+            break
 
 
 def main():
@@ -113,15 +124,16 @@ def main():
     print("-------------------------------------------")
     print("\n Two fun facts:")
     print("\n 1. It first appeared in China in the 17th century.")
-    print("\n 2. Statistically, people tend to choose Scissors in the first round")
+    print("\n 2. People tend to choose Scissors in the first round")
     print("\n    and Rock in the second.")
     print("\n Now, let's play!")
     print("-------------------------------------------")
-    
+
     rulesRecap = input("\n Do you need to refresh the rules? Y/N:\n").lower()
     if rulesRecap == "y":
         display_rules()
 
     let_us_play()
+
 
 main()
