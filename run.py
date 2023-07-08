@@ -8,6 +8,11 @@ def ask_rules_refresh():
     rulesRecap = input("\n Do you need to refresh the rules? Y/N:\n").lower()
     if rulesRecap == "y":
         display_rules()
+    elif rulesRecap == "n":
+        let_us_play()
+    else:
+        print("Invalid input. Please enter Y or N.")
+        ask_rules_refresh()
 
 
 # function to display the rules
