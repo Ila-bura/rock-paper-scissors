@@ -3,6 +3,13 @@ import random
 gameOptions = ["rock", "paper", "scissors"]
 
 
+# function to ask if the user needs a refresher of the rules
+def ask_rules_refresh():
+    rulesRecap = input("\n Do you need to refresh the rules? Y/N:\n").lower()
+    if rulesRecap == "y":
+        display_rules()
+
+
 # function to display the rules
 def display_rules():
     print("\n - Rock smashes Scissors")
@@ -92,6 +99,7 @@ def let_us_play():
             print("\n Ties:", tie_score)
             if user_score > bot_score:
                 print("\n You won the game!")
+                print("\n Thanks for playing!")
             else:
                 print("\n Bot won the game!")
                 print("\n Losing sucks, but thanks for playing!")
@@ -111,9 +119,7 @@ def main():
     print("\n Now, let's play!")
     print("-------------------------------------------")
 
-    rulesRecap = input("\n Do you need to refresh the rules? Y/N:\n").lower()
-    if rulesRecap == "y":
-        display_rules()
+    ask_rules_refresh()
 
     let_us_play()
 
