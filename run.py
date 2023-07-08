@@ -97,30 +97,31 @@ def let_us_play():
             print("\n You scored:", user_score)
             print("\n Bot scored:", bot_score)
             print("\n Ties:", tie_score)
-            
             if user_score > bot_score:
                 print("\n You won the game!")
-                print("\n You scored:", user_score)
-                print("\n Bot scored:", bot_score)
-                print("\n Ties:", tie_score)
             else:
-                print("\n Bot won the game!")
-                print("\n You scored:", user_score)
-                print("\n Bot scored:", bot_score)
-                print("\n Ties:", tie_score)
-                print("\n Losing sucks, but thanks for playing!")
-                print("-------------------------------------------")
+                print("\n Bot won the game!"
+            print("\n Losing sucks, but thanks for playing!")
+            print("-------------------------------------------")
 
             if not play_again():
                 break
 
 
 def main():
-    """
-    Call all game functions.
-    """
-    display_rules()
-    let_us_play()
+    print("\n Welcome to the game of Rock Paper Scissors!")
+    print("-------------------------------------------")
+    print("\n Two fun facts:")
+    print("\n 1. It first appeared in China in the 17th century.")
+    print("\n 2. Statistically, people tend to choose Scissors in the first round")
+    print("\n    and Rock in the second.")
+    print("\n Now, let's play!")
+    print("-------------------------------------------")
+    
+    rulesRecap = input("\n Do you need to refresh the rules? Y/N:\n").lower()
+    if rulesRecap == "y":
+        display_rules()
 
+    let_us_play()
 
 main()
