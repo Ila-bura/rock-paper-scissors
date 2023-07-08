@@ -46,19 +46,6 @@ def decide_winner(userTurn, bot_choice):
         return "bot"
 
 
-# function to let user play again
-def play_again():
-    while True:
-        want_more = input("\n Want to give it another go? (Y/N): ").lower()
-        if want_more == "y":
-            print("\n Here you go, best of luck!")
-            return True
-        elif want_more == "n":
-            print("\n Thanks for playing!")
-            return False
-        print("\n Invalid input. Please enter Y or N.")
-
-
 # function to reset the scores to zero
 def reset_scores():
     user_score = 0
@@ -75,47 +62,42 @@ Show option "q" to abandon the game.
 
 
 def let_us_play():
+    user_score, bot_score, tie_score = reset_scores()
+
     while True:
-        user_score, bot_score, tie_score = reset_scores()
+        userTurn = get_user_selection()
+        if userTurn is None:
+            break
 
-        while True:
-            userTurn = get_user_selection()
-            if userTurn is None:
-                break
+        bot_choice = get_bot_selection()
+        print("\n You chose:", userTurn)
+        print("\n Bot chose:", bot_choice)
 
-            bot_choice = get_bot_selection()
-            print("\n You chose:", userTurn)
-            print("\n Bot chose:", bot_choice)
+        result = decide_winner(userTurn, bot_choice)
+        if result == "tie":
+            tie_score += 1
+            print("\n It's a tie, play again!")
+        elif result == "user":
+            user_score += 1
+            print("\n You win!")
+        else:
+            bot_score += 1
+            print("\n You lose!")
 
-            result = decide_winner(userTurn, bot_choice)
-            if result == "tie":
-                tie_score += 1
-                print("\n It's a tie, play again!")
-            elif result == "user":
-                user_score += 1
-                print("\n You win!")
+        if user_score == 3 or bot_score == 3:
+            print("-------------------------------------------")
+            print("\n Game over!")
+            print("\n You scored:", user_score)
+            print("\n Bot scored:", bot_score)
+            print("\n Ties:", tie_score)
+            if user_score > bot_score:
+                print("\n You won the game!")
             else:
-                bot_score += 1
-                print("\n You lose!")
+                print("\n Bot won the game!")
+                print("\n Losing sucks, but thanks for playing!")
 
-            if user_score == 3 or bot_score == 3:
-                print("-------------------------------------------")
-                print("\n Game over!")
-                print("\n You scored:", user_score)
-                print("\n Bot scored:", bot_score)
-                print("\n Ties:", tie_score)
-                if user_score > bot_score:
-                    print("\n You won the game!")
-                else:
-                    print("\n Bot won the game!")
-                    print("\n Losing sucks, but thanks for playing!")
-
-                print("-------------------------------------------")
-
-                if not play_again():
-                    return
-
-        if not play_again():
+            print("-------------------------------------------")
+            print("\n Click on Run Program to play again")
             break
 
 
