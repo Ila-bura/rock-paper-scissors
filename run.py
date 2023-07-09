@@ -68,6 +68,20 @@ def round_over():
     return user_score == 3 or bot_score == 3
 
 
+# function to display the final game result
+def display_game_result():
+    print("-------------------------------------------")
+    print("\nGame over!")
+    print("\nYou scored:", user_score)
+    print("Bot scored:", bot_score)
+    print("Ties:", tie_score)
+    if user_score > bot_score:
+        print("\nYou won the game!")
+    else:
+        print("\nBot won the game!")
+        print("Sorry, losing sucks")
+
+
 # function to ask if the user needs a refresher of the rules
 def ask_rules_refresh():
     rules_recap = input("\n Do you need to refresh the rules? Y/N:\n").lower()
