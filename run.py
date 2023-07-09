@@ -1,5 +1,6 @@
 import random
 import sys
+
 # constant with a list of acceptable options for the game
 game_options = ["rock", "paper", "scissors"]
 
@@ -8,29 +9,6 @@ game_options = ["rock", "paper", "scissors"]
 user_score = 0
 bot_score = 0
 tie_score = 0
-
-
-# function to ask if the user needs a refresher of the rules
-def ask_rules_refresh():
-    rules_recap = input("\n Do you need to refresh the rules? Y/N:\n").lower()
-    if rules_recap == "y":
-        display_rules()
-    elif rules_recap == "n":
-        let_us_play()
-    else:
-        print("Invalid input. Please enter Y or N.")
-        ask_rules_refresh()
-
-
-# function to display the rules
-def display_rules():
-    print("\n - Rock smashes Scissors")
-    print("\n - Scissors cut Paper")
-    print("\n - Paper covers Rock")
-    print("\n - Every turn you win, you score 1 point")
-    print("\n - To win the game you need a total of 3 points")
-    print("-------------------------------------------")
-    return None
 
 
 # function to get user choice. check if the option typed is valid.
@@ -73,6 +51,39 @@ def update_scores(result):
         user_score += 1
     else:
         bot_score += 1
+
+
+# Function to display the game result
+def display_result(result):
+    if result == "tie":
+        print("\nIt's a tie, play again!")
+    elif result == "user":
+        print("\nYou win!")
+    else:
+        print("\nYou lose!")
+
+
+# function to ask if the user needs a refresher of the rules
+def ask_rules_refresh():
+    rules_recap = input("\n Do you need to refresh the rules? Y/N:\n").lower()
+    if rules_recap == "y":
+        display_rules()
+    elif rules_recap == "n":
+        let_us_play()
+    else:
+        print("Invalid input. Please enter Y or N.")
+        ask_rules_refresh()
+
+
+# function to display the rules
+def display_rules():
+    print("\n - Rock smashes Scissors")
+    print("\n - Scissors cut Paper")
+    print("\n - Paper covers Rock")
+    print("\n - Every turn you win, you score 1 point")
+    print("\n - To win the game you need a total of 3 points")
+    print("-------------------------------------------")
+    return None
 
 
 # function to reset the scores
