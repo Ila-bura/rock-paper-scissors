@@ -25,9 +25,9 @@ def get_user_selection():
             if user_turn not in game_options:
                 raise ValueError()
         except ValueError:
-            print("\nInvalid input!")
-            print("You can only choose Rock, Paper, or Scissors.")
-            print("Please check your spelling and try again!")
+            print("\n Invalid input!")
+            print("\n You can only choose Rock, Paper, or Scissors.")
+            print("\n Please check your spelling and try again!")
         else:
             return user_turn
 
@@ -73,11 +73,11 @@ def display_result(result):
     Function to display the results for each round
     """
     if result == "tie":
-        print("\nIt's a tie, play again!")
+        print("\n It's a tie, play again!")
     elif result == "user":
-        print("\nYou win!")
+        print("\n You win!")
     else:
-        print("\nYou lose!")
+        print("\n You lose!")
 
 
 def round_over():
@@ -92,15 +92,15 @@ def display_game_result():
     Function to display the final results of the game
     """
     print("-------------------------------------------")
-    print("\nGame over!")
-    print("\nYou scored:", user_score)
-    print("Bot scored:", bot_score)
-    print("Ties:", tie_score)
+    print("\n Game over!")
+    print("\n You scored:", user_score)
+    print("\n Bot scored:", bot_score)
+    print("\n Ties:", tie_score)
     if user_score > bot_score:
-        print("\nYou won the game!")
+        print("\n You won the game!")
     else:
-        print("\nBot won the game!")
-        print("Sorry, losing sucks")
+        print("\n Bot won the game!")
+        print("\n Sorry, losing sucks")
 
 
 def ask_restart_quit():
@@ -108,17 +108,17 @@ def ask_restart_quit():
     Function to ask the user if they want to restart or quit the game.
     """
     while True:
-        choice = input("\nDo you want to play again? (Y)es/(Q)uit: ").lower()
+        choice = input("\n Do you want to play again? (Y)es/(Q)uit: ").lower()
         if choice == "y":
             reset_scores()
-            print("\nHere you go, best of luck!")
+            print("\n Here you go, best of luck!")
             let_us_play()
             break
         elif choice == "q":
-            print("\nToodaloo & thanks for playing!")
+            print("\n Toodaloo & thanks for playing!")
             sys.exit()
         else:
-            print("Invalid input. Please enter Y or Q.")
+            print("\n Invalid input. Please enter Y or Q.")
 
 
 def let_us_play():
@@ -162,7 +162,7 @@ def ask_rules_refresh():
     elif rules_recap == "n":
         let_us_play()
     else:
-        print("Invalid input. Please enter Y or N.")
+        print("\n Invalid input. Please enter Y or N.")
         ask_rules_refresh()
 
 
