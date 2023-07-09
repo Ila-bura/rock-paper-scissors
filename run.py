@@ -17,10 +17,14 @@ tie_score = 0
 def get_user_selection():
     """
     Function to get user choice and check if the option typed is valid.
+    If it's not, raise an error.
     """
     while True:
-        user_turn = input("\nPick Rock/Paper/Scissors: ").lower()
-        if user_turn not in game_options:
+        try:
+            user_turn = input("\nPick Rock/Paper/Scissors: ").lower()
+            if user_turn not in game_options:
+                raise ValueError()
+        except ValueError:
             print("\nInvalid input!")
             print("You can only choose Rock, Paper, or Scissors.")
             print("Please check your spelling and try again!")
