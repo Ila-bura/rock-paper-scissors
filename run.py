@@ -1,3 +1,6 @@
+"""
+Import section
+"""
 import random
 import sys
 
@@ -11,8 +14,10 @@ bot_score = 0
 tie_score = 0
 
 
-# function to get user choice. check if the option typed is valid.
 def get_user_selection():
+    """
+    Function to get user choice and check if the option typed is valid.
+    """
     while True:
         user_turn = input("\nPick Rock/Paper/Scissors: ").lower()
         if user_turn not in game_options:
@@ -23,15 +28,19 @@ def get_user_selection():
             return user_turn
 
 
-# function to get computer choice
 def get_bot_selection():
+    """
+    Function to register the random computer's choice
+    """
     random_number = random.randint(0, 2)
     bot_choice = game_options[random_number]
     return bot_choice
 
 
-# function to establish the winner
 def decide_winner(user_turn, bot_choice):
+    """
+    Function to establish the winner or if it's a tie
+    """
     if user_turn == bot_choice:
         return "tie"
     elif (user_turn == "rock" and bot_choice == "scissors") or \
@@ -42,8 +51,10 @@ def decide_winner(user_turn, bot_choice):
         return "bot"
 
 
-# function to update the scores
 def update_scores(result):
+    """
+    Function to update the scores
+    """
     global user_score, bot_score, tie_score
     if result == "tie":
         tie_score += 1
@@ -53,8 +64,10 @@ def update_scores(result):
         bot_score += 1
 
 
-# function to display the game result
 def display_result(result):
+    """
+    Function to display the results for each round
+    """
     if result == "tie":
         print("\nIt's a tie, play again!")
     elif result == "user":
@@ -63,13 +76,17 @@ def display_result(result):
         print("\nYou lose!")
 
 
-# function to check if the played round is over
 def round_over():
+    """
+    Function to check if the round is over
+    """
     return user_score == 3 or bot_score == 3
 
 
-# function to display the final game result
 def display_game_result():
+    """
+    Function to display the final results of the game
+    """
     print("-------------------------------------------")
     print("\nGame over!")
     print("\nYou scored:", user_score)
@@ -82,8 +99,10 @@ def display_game_result():
         print("Sorry, losing sucks")
 
 
-# function to ask the user if they want to restart or quit the game
 def ask_restart_quit():
+    """
+    Function to ask the user if they want to restart or quit the game.
+    """
     while True:
         choice = input("\nDo you want to play again? (Y)es/(Q)uit: ").lower()
         if choice == "y":
@@ -92,14 +111,16 @@ def ask_restart_quit():
             let_us_play()
             break
         elif choice == "q":
-            print("\nTodaloo & thanks for playing!")
+            print("\nToodaloo & thanks for playing!")
             sys.exit()
         else:
             print("Invalid input. Please enter Y or Q.")
 
 
-# function to kick off the game.
 def let_us_play():
+    """
+    Function to kick off the game.
+    """
     while True:
         user_turn = get_user_selection()
         bot_choice = get_bot_selection()
@@ -117,16 +138,20 @@ def let_us_play():
             break
 
 
-# function to reset the scores
 def reset_scores():
+    """
+    Function to reset the scores.
+    """
     global user_score, bot_score, tie_score
     user_score = 0
     bot_score = 0
     tie_score = 0
 
 
-# function to ask if the user needs a refresher of the rules
 def ask_rules_refresh():
+    """
+    Function to ask if the user needs a refresher of the rules
+    """
     rules_recap = input("\n Do you need to refresh the rules? Y/N:\n").lower()
     if rules_recap == "y":
         display_rules()
@@ -137,19 +162,24 @@ def ask_rules_refresh():
         ask_rules_refresh()
 
 
-# function to display the rules
 def display_rules():
+    """
+    Function to display the rules
+    """
     print("\n - Rock smashes Scissors")
     print("\n - Scissors cut Paper")
     print("\n - Paper covers Rock")
     print("\n - Every turn you win, you score 1 point")
+    print("\n - If it's a tie, no points assigned")
     print("\n - To win the game you need a total of 3 points")
     print("-------------------------------------------")
     return None
 
 
-# main function to call all game functions
 def main():
+    """
+    Main function to call all game functions.
+    """
     print("\n Welcome to the game of Rock Paper Scissors!")
     print("-------------------------------------------")
     print("\n Two fun facts:")
