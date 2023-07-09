@@ -81,6 +81,16 @@ Make the game more challenging by providing more options to choose from and a le
 ![PEP8 Validation](assets/images/readme-pep8.png)
 The only error found was a blank line left at end of the file. This error has been fixed.
 
+### Manual Testing
+| Test            | Expected            | Outcome     |
+| :-------------- | :------------------ | :---------- |
+|                |                     | As Expected |
+|                |                     | As Expected |
+|                |                     | As Expected |
+|                |                     | As Expected |
+|                |                     | As Expected |
+|                |                     | As Expected |
+
 ### Unfixed Bugs
 None that I am aware of as of now.
 
