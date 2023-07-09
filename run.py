@@ -75,11 +75,20 @@ def update_scores(result):
         bot_score += 1
 
 
+# function to reset the scores
+def reset_scores():
+    global user_score, bot_score, tie_score
+    user_score = 0
+    bot_score = 0
+    tie_score = 0
+
+
 # function to ask the user if they want to restart or quit the game
 def ask_restart_quit():
     while True:
         choice = input("\nDo you want to play again? (Y)es/(Q)uit: ").lower()
         if choice == "y":
+            reset_scores()
             print("\nHere you go, best of luck!")
             let_us_play()
             break
@@ -94,9 +103,6 @@ def ask_restart_quit():
 def let_us_play():
     while True:
         user_turn = get_user_selection()
-        if user_turn is None:
-            break
-
         bot_choice = get_bot_selection()
         print("\n You chose:", user_turn)
         print("\n Bot chose:", bot_choice)
