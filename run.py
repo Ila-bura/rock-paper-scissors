@@ -53,7 +53,7 @@ def update_scores(result):
         bot_score += 1
 
 
-# Function to display the game result
+# function to display the game result
 def display_result(result):
     if result == "tie":
         print("\nIt's a tie, play again!")
@@ -61,6 +61,11 @@ def display_result(result):
         print("\nYou win!")
     else:
         print("\nYou lose!")
+
+
+# function to check if the played round is over
+def round_over():
+    return user_score == 3 or bot_score == 3
 
 
 # function to ask if the user needs a refresher of the rules
