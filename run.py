@@ -1,4 +1,5 @@
 import random
+import sys
 # constant with a list of acceptable options for the game
 game_options = ["rock", "paper", "scissors"]
 
@@ -32,19 +33,16 @@ def display_rules():
     return None
 
 
-# function to get user choice
+# function to get user choice. check if the option typed is valid.
 def get_user_selection():
-    user_turn = input("\n Pick Rock/Paper/Scissors or Q to quit:\n").lower()
-    if user_turn == "q":
-        print("\n Game over! Thanks for playing!")
-        return None
-    elif user_turn not in game_options:
-        print("\n Invalid input!")
-        print("\n You can only choose Rock, Paper, or Scissors.")
-        print("\n Please check your spelling and try again!")
-        return get_user_selection()
-    else:
-        return user_turn
+    while True:
+        user_turn = input("\nPick Rock/Paper/Scissors: ").lower()
+        if user_turn not in game_options:
+            print("\nInvalid input!")
+            print("You can only choose Rock, Paper, or Scissors.")
+            print("Please check your spelling and try again!")
+        else:
+            return user_turn
 
 
 # function to get computer choice
@@ -77,12 +75,22 @@ def update_scores(result):
         bot_score += 1
 
 
-"""
-Function to kick off the game. Prompt the user to choose an option.
-Check if the option typed is valid.
-"""
+# function to ask the user if they want to restart or quit the game
+def ask_restart_quit():
+    while True:
+        choice = input("\nDo you want to play again? (Y)es/(Q)uit: ").lower()
+        if choice == "y":
+            print("\nHere you go, best of luck!")
+            let_us_play()
+            break
+        elif choice == "q":
+            print("\nTodaloo & thanks for playing!")
+            sys.exit()
+        else:
+            print("Invalid input. Please enter Y or Q.")
 
 
+# function to kick off the game. Prompt the user to choose an option.
 def let_us_play():
     while True:
         user_turn = get_user_selection()
@@ -111,13 +119,10 @@ def let_us_play():
             print("\n Ties:", tie_score)
             if user_score > bot_score:
                 print("\n You won the game!")
-                print("\n Thanks for playing!")
             else:
                 print("\n Bot won the game!")
-                print("\n Losing sucks, but thanks for playing!")
-
-            print("-------------------------------------------")
-            print("\n Click on Run Program to play again")
+                print("\n Sorry, losing sucks")
+            ask_restart_quit()
             break
 
 
