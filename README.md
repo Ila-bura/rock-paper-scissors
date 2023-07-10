@@ -108,12 +108,29 @@ The only error originally found was a blank line left at end of the file. This e
 ### Manual Testing
 | Test            | Expected            | Outcome     |
 | :-------------- | :------------------ | :---------- |
-|   Open landing page             |                     | As Expected |
-|                |                     | As Expected |
-|                |                     | As Expected |
-|                |                     | As Expected |
-|                |                     | As Expected |
-|                |                     | As Expected |
+|   Open landing page             |   A series of print statements are displayed, greeting the user and providing fun facts about the game. In the last line the user is asked if they wish to revise the game before playing.                  | As Expected |
+|   Click enter without typing anything             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
+|   Type a number or a series of numbers             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
+|   Type random keys          | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
+|   Type y in lowercase             |    The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                 | As Expected |
+|   Type Y in uppercase             |  The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                   | As Expected |
+|   Type n in lowercase             |   The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                  | As Expected |
+|    Type N in uppercase            |   The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                  | As Expected |
+|   On the first round of the game type rock in lowercase            |  The input is validated by the system which shows the user's choice, a random bot's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
+|   On the second round of the game type rock in uppercase            |  The input is validated by the system which shows the user's choice, a random bot's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
+|   On the third round of the game type a random combination of lowercase and uppercase letters, such as RoCk or rOCk.          |  The input is validated by the system which shows the user's choice, a random bot's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
+|   Keep playing until either party scores a total of three points.         |  The game is over, the final scores are displayed and the winner is announced. The last line asks the user if they want play again. Two options are displayed: Y to answer Yes and Q to quit the application.            | As Expected |
+|   Type y in lowercase        |  A message wishes the user best of luck. On a second line the user is prompted to start playing by typing an option between Rock, Paper and Scissors.                           | As Expected |
+|   Type Y in uppercase        |  A message wishes the user best of luck. On a second line the user is prompted to start playing by typing an option between Rock, Paper and Scissors.                           | As Expected |
+|   Type any of the following options: yes / YES / YeS / YEs / yeS / YEs / Yes / yES       | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.              | As Expected |
+|   Click enter without typing anything             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.              | As Expected |
+|   Type a number or a series of numbers             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.             | As Expected |
+|   Type random keys          | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.               | As Expected |
+|   Type q in lowercase          | A goodbye message is displayed thanking the user for playing.             | As Expected |
+|   Type Q in uppercase          | A goodbye message is displayed thanking the user for playing.             | As Expected |
+|   Click on Run Program          | The previous messages are cleared and the landing page is displayed.            | As Expected |
+
+
 
 ### Unfixed Bugs
 None that I am aware of as of now.
