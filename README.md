@@ -1,5 +1,11 @@
 # Ila's Rock Paper Scissors
-Ila's Rock Paper Scissors is an app that allows the users to play the old-fashioned game against the computer. For the uninitiated, the users has the chance to display the rules of the game. The game consists of multiple rounds: for each round, the user is prompted to type one of the possible options then the computer will generate a random option itself. The possible outcomes of each round are three: the user wins, the bot wins or it is a tie. For every win, one point is assigned. Ties are not counted and the winner needs to score at least 3 points. Once the game is over and the results are displayed, the user is presented with the option to run the app again, or quit the application. If they decide to play again, the scores will be reset and the game will restart.
+Ila's Rock Paper Scissors is an app that allows the users to play the old-fashioned game against the computer. 
+
+The uninitiated user has the chance to display the rules of the game before playing the first round. 
+The game consists of multiple rounds: for each round, the user is prompted to type one of the possible options then the computer will generate a random option itself. 
+The possible outcomes for each round are three: the user wins, the bot wins or it is a tie. For every win, one point is assigned. Ties are not counted and the winner needs to score at least 3 points. 
+
+Once the game is over and the results are displayed, the user is presented with the option to run the app again, or quit the application. If they decide to play again, the scores will be reset and the game will restart.
 
 ![Site view across devices](assets/images/readme-amiresponsive.png)
 
@@ -41,13 +47,13 @@ To provide a simple and fun platform to try their luck and have fun in anticipat
 Anyone passionate about computer games based on luck.
 
 ### Communication:
-Despite its simplicity, the app aims to provide lighthearted entertainment. The print statements generated are clear and to the point, prompting the user to choose their options at each turn and prevent errors by communicating clearly if the input is incorrect. 
+The app aims to provide light-hearted entertainment. The print statements generated are clear and to the point, prompting the user to choose their options at each turn and prevent errors by communicating clearly if the input is incorrect. 
 
 ### Current User Goals:
 To keep the user entertained and engaged with the app by allowing them to play multiple games, one after the other. 
 
 ### New User Goals:
-Experiment with the coomputer-based version of an old-fashioned game.
+Experiment with a coomputer-based version of the old-fashioned game.
 
 ### Future Goals:
 Make the game more challenging by providing more options to choose from and a leaderboard to encourage users to keep playing. Improve text readability by adding a touch of colour to the print statements.
@@ -63,18 +69,29 @@ Make the game more challenging by providing more options to choose from and a le
 
 #### Landing Page:
 ![Landing Page](assets/images/readme-landingpage.png)
+The user is greeted with a couple of fun facts regarding the original game of Rock Paper Scissors. The user is then able to choose whether to revise the rules of the game or go straight to playing.
+The only viable options to choose from (Y or N) are clearly stated. If the user types any other keys or clicks enter without typing anything, an error message is displayed with the only available options. A loop makes sure that the user has the chance to type their answer again, until they type an acceptable option. 
 
 #### Rules Refresher:
 ![Rules Refresher](assets/images/readme-rulesrefresher.png)
+A quick summary of the main rules of the game, how points are assigned and how many are needed to win the game. In the subsequent line, the user can start playing by entering one of the possible options.
 
 #### Possible Outcomes:
 ![Possible Outcomes](assets/images/readme-outcomes.png)
+For each round the user and the bot's choices are displayed, as well as the partial results. If it is a tie, the user is prompted to make another choice.
+
+#### Error Handling:
+![Invalid Input](assets/images/readme-invalidinput.png)
+The only viable options to choose from while playing are Rock, Paper, Scissors. The input can be typed in both uppercase and lowercase and still treated as valid.
+If the user types any other keys or clicks enter without typing anything, an error message is displayed reminding them of the only three available options. A loop makes sure that the user has the chance to type their choice again, until they type an acceptable option.
 
 #### Final Scores:
 ![Final Scores](assets/images/readme-finalscores.png)
+As soon as either the user or the bot score 3 points, the end of the game is announced together with the final results, including the number of ties.
 
 #### Play again or Quit app:
 ![Play again or Quit](assets/images/readme-quit-restart.png)
+The user has the option to quit the app or keep playing. In the latter case, the game restarts and the scores are reset.
 
 ### Features Left to Implement
 - Expand the app and provide more options to choose from.
@@ -84,14 +101,14 @@ Make the game more challenging by providing more options to choose from and a le
 ## Testing
 
 ### Validator Testing
-- The code has been tested by using [PEP8 Online](http://pep8online.com/).
-![PEP8 Validation](assets/images/readme-pep8.png)
-The only error found was a blank line left at end of the file. This error has been fixed.
+- The code has been tested by using [CI PEP8 Online](hhttps://pep8ci.herokuapp.com/).
+![PEP8 CI Validation](assets/images/readme-pep8.png)
+The only error originally found was a blank line left at end of the file. This error has been fixed.
 
 ### Manual Testing
 | Test            | Expected            | Outcome     |
 | :-------------- | :------------------ | :---------- |
-|                |                     | As Expected |
+|   Open landing page             |                     | As Expected |
 |                |                     | As Expected |
 |                |                     | As Expected |
 |                |                     | As Expected |

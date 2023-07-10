@@ -184,10 +184,10 @@ def main():
     """
     Main function to call all game functions.
     """
-    print("\n Welcome to the game of Rock Paper Scissors!")
+    print("\n Welcome to Ila's Rock Paper Scissors!")
     print("-------------------------------------------------------")
     print("\n Two fun facts:")
-    print("\n 1. It first appeared in China in the 17th century.")
+    print("\n 1. The game first appeared in China in the 17th century.")
     print("\n 2. People tend to choose Scissors in the first round")
     print("\n    and Rock in the second.")
     print("\n Now, let's play!")
