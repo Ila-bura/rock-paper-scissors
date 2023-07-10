@@ -23,6 +23,8 @@ Ila's Rock Paper Scissors site is live, the link can be found [HERE](https://roc
   + [Main Languages Used](#main-languages-used "Main Languages Used")
   + [Frameworks, Libraries & Programs Used](#frameworks-libraries-programs-used "Frameworks, Libraries & Programs Used")
 + [Deployment](#deployment "Deployment")
++ [Version Control](#version-control "Version Control")
++ [Page Deployment](#page-deployment "Page Deployment")
 + [Credits](#credits "Credits")
   + [Content](#content "Content")
   + [Media](#media "Media")
@@ -62,9 +64,14 @@ Make the game more challenging by providing more options to choose from and a le
 #### Landing Page:
 ![Landing Page](assets/images/readme-landingpage.png)
 
-####
+#### Rules Refresher:
+![Rules Refresher](assets/images/readme-rulesrefresher.png)
 
-####
+#### Possible Outcomes:
+![Possible Outcomes](assets/images/readme-outcomes.png)
+
+#### Final Scores:
+![Final Scores](assets/images/readme-finalscores.png)
 
 #### Play again or Quit app:
 ![Play again or Quit](assets/images/readme-quit-restart.png)

@@ -91,7 +91,7 @@ def display_game_result():
     """
     Function to display the final results of the game
     """
-    print("-------------------------------------------")
+    print("-------------------------------------------------------")
     print("\n Game over!")
     print("\n You scored:", user_score)
     print("\n Bot scored:", bot_score)
@@ -176,7 +176,7 @@ def display_rules():
     print("\n - Every turn you win, you score 1 point")
     print("\n - If it's a tie, no points assigned")
     print("\n - To win the game you need a total of 3 points")
-    print("-------------------------------------------")
+    print("-------------------------------------------------------")
     return None
 
 
@@ -185,13 +185,13 @@ def main():
     Main function to call all game functions.
     """
     print("\n Welcome to the game of Rock Paper Scissors!")
-    print("-------------------------------------------")
+    print("-------------------------------------------------------")
     print("\n Two fun facts:")
     print("\n 1. It first appeared in China in the 17th century.")
     print("\n 2. People tend to choose Scissors in the first round")
     print("\n    and Rock in the second.")
     print("\n Now, let's play!")
-    print("-------------------------------------------")
+    print("-------------------------------------------------------")
 
     ask_rules_refresh()
 
