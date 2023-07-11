@@ -1,9 +1,11 @@
 # Ila's Rock Paper Scissors
-Ila's Rock Paper Scissors is an app that allows the users to play the old-fashioned game against the computer. 
+Ila's Rock Paper Scissors is an app that allows users to play this old-fashioned game against the computer. 
 
-The uninitiated user has the chance to display the rules of the game before playing the first round. 
-The game consists of multiple rounds: for each round, the user is prompted to type one of the possible options then the computer will generate a random option itself. 
-The possible outcomes for each round are three: the user wins, the bot wins or it is a tie. For every win, one point is assigned. Ties are not counted and the winner needs to score at least 3 points. 
+For the benifit of the uninitiated user, the rules of the game can be revised before playing the first round. 
+
+The game consists of multiple rounds: for each round, the user is prompted to type one of the possible options (rock, paper or scissors) then the computer will pick a random choice itself. 
+
+The possible outcomes for each round are three: the user wins, the bot wins or it is a tie. For every win, one point is assigned. Ties do not count towards scoring. To win the game, 3 points need to be scored. 
 
 Once the game is over and the results are displayed, the user is presented with the option to run the app again, or quit the application. If they decide to play again, the scores will be reset and the game will restart.
 
@@ -96,13 +98,13 @@ If the user types any other keys or clicks enter without typing anything, an err
 
 As soon as either the user or the bot score 3 points, the end of the game is announced together with the final results, including the number of ties.
 
-#### Play again or Quit app:
+#### Play Again or Quit App:
 ![Play again or Quit](assets/images/readme-quit-restart.png)
 
 The user has the option to quit the app or keep playing. In the latter case, the game restarts and the scores are reset.
 
 ### Features Left to Implement
-- Expand the app and provide more options to choose from.
+- Expand the app and provide more options to choose from (Lizard, Spock).
 - Change the colour of the print statements to improve text readability. 
 - Create a leaderboard to store the best scores.
 
@@ -119,11 +121,11 @@ The only error originally found was a blank line left at end of the file. This e
 | :-------------- | :------------------ | :---------- |
 |   Open landing page             |   A series of print statements are displayed, greeting the user and providing fun facts about the game. In the last line the user is asked if they wish to revise the rules before playing.                  | As Expected |
 |  Prompt: Do you need to refresh the rules? Y/N: 
-Click enter without typing anything             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
+Click enter without typing anything             | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
 |   Prompt: Do you need to refresh the rules? Y/N:
-Type a number or a series of numbers             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
+Type a number or a series of numbers             | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
 |   Prompt: Do you need to refresh the rules? Y/N:
-Type random keys          | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
+Type random keys          | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
 |   Prompt: Do you need to refresh the rules? Y/N:
 Type y in lowercase             |    The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                 | As Expected |
 |   Prompt: Do you need to refresh the rules? Y/N:
@@ -133,11 +135,15 @@ Type n in lowercase             |   The rules of the game are displayed. The fin
 |    Prompt: Do you need to refresh the rules? Y/N:
 Type N in uppercase            |   The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                  | As Expected |
 |   Prompt: Pick Rock/Paper/Scissors: 
-Type rock in lowercase            |  The input is validated by the system which shows the user's choice, a random bot's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
+Type rock in lowercase
+Type paper in lowercase
+Type scissors in lowercase            |  The input is validated by the system which shows the user's choice, a random bot's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
 |   Prompt: Pick Rock/Paper/Scissors: 
-Type rock in uppercase            |  The input is validated by the system which shows the user's choice, a random bot's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
+Type rock in uppercase 
+Type paper in uppercase 
+Type scissors in uppercase          |  The input is validated by the system which shows the user's choice, a random bot's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
 |   Prompt: Pick Rock/Paper/Scissors:
-Type a random combination of lowercase and uppercase letters, such as RoCk or rOCk.          |  The input is validated by the system which shows the user's choice, a random bot's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
+Type a random combination of lowercase and uppercase letters, such as RoCk, pApeR or scISsORs.          |  The input is validated by the system which shows the user's choice, a random bot's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
 |   Keep playing until either opponent scores a total of three points.         |  The game is over, the final scores are displayed and the winner is announced. The last line asks the user if they want play again. Two options are displayed: Y to answer Yes and Q to quit the application.            | As Expected |
 |   Prompt: Do you want to play again? (Y)es/(Q)uit:
 Type y in lowercase        |  A message wishes the user best of luck. On a second line the user is prompted to start playing by typing an option between Rock, Paper and Scissors.                           | As Expected |
@@ -146,13 +152,13 @@ Type Y in uppercase        |  A message wishes the user best of luck. On a secon
 |   Prompt: Do you want to play again? (Y)es/(Q)uit:
 Type any of the following options: yes / YES / YeS / YEs / yeS / YEs / Yes / yES       | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.              | As Expected |
 |   Prompt: Do you want to play again? (Y)es/(Q)uit:
-Click enter without typing anything             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.              | As Expected |
+Click enter without typing anything             | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. In a subsequent line the user is asked if they wish to play the game again.              | As Expected |
 |   Prompt: Do you want to play again? (Y)es/(Q)uit:
-Type a number or a series of numbers             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.             | As Expected |
+Type a number or a series of numbers             | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. In a subsequent line the user is asked if they wish to play the game again.             | As Expected |
 |   Prompt: Do you want to play again? (Y)es/(Q)uit:
-Type random keys          | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.               | As Expected |
+Type random keys          | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. In a subsequent line the user is asked if they wish to play the game again.               | As Expected |
 |   Prompt: Here you go, best of luck! Pick Rock/Paper/Scissors:
-Play the game until a winner is declared. The scores from the previous game were correctly reset and the score of the winner of the current game shows exactly 3 points (no more than 3) | As Expected |
+Play the game until a winner is declared. | The scores from the previous game were correctly reset and the score of the winner of the current game shows exactly 3 points (no more than 3) | As Expected |
 |   Prompt: Do you want to play again? (Y)es/(Q)uit:
 Type q in lowercase          | A goodbye message is displayed thanking the user for playing.             | As Expected |
 |   Prompt: Do you want to play again? (Y)es/(Q)uit:
@@ -229,8 +235,10 @@ To understand and implement the logic required for the game, I consulted the fol
 
 The deployment of the game was learned from Code Institute's walkthrough project: love_sandwiches
 
-### Content
 + [StackOverflow](https://stackoverflow.com/questions/14639077/how-to-use-sys-exit-in-python) - sourced for the exit function.
 + [W3Schools Python Random randint](https://www.w3schools.com/python/ref_random_randint.asp) - consulted to learn how to import the random system.
-+ [W3Schools Conditions and If statements](https://www.w3schools.com/python/python_conditions.asp) - consulted as reference point. 
-+ [W3Schools While loops](https://www.w3schools.com/python/python_while_loops.asp) - consulted as reference point.
++ [W3Schools Conditions and If statements](https://www.w3schools.com/python/python_conditions.asp) - consulted as a reference point. 
++ [W3Schools While loops](https://www.w3schools.com/python/python_while_loops.asp) - consulted as a reference point.
+
+### Acknowledgments
+A special acknowledgment to [Martina Terlevic](https://github.com/SephTheOverwitch), my Code Institute Mentor, for her invaluable advice and unwavering support and encouragement.
