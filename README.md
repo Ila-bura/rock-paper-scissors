@@ -1,7 +1,7 @@
 # Ila's Rock Paper Scissors
 Ila's Rock Paper Scissors is an app that allows users to play the old-fashioned game of chance against the computer.  
 
-The game consists of multiple rounds: for each round, the user is prompted to type one of the three possible options then the computer will pick a random choice itself. 
+The game consists of multiple rounds: for each round, the user is prompted to type one of the three possible options then the computer will make a random choice itself. 
 
 There are three possible outcomes for each round: the user wins, the computer wins or it is a tie. For every win, one point is assigned. Ties do not count towards scoring. The first player to score 3 points wins the game. 
 
