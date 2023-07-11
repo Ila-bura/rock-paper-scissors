@@ -7,6 +7,8 @@ The possible outcomes for each round are three: the user wins, the bot wins or i
 
 Once the game is over and the results are displayed, the user is presented with the option to run the app again, or quit the application. If they decide to play again, the scores will be reset and the game will restart.
 
+Although the app is a terminal-based game and was designed to be accessed on desktop only, here is how it would look like on a variety of devices:
+
 ![Site view across devices](assets/images/readme-amiresponsive.png)
 
 Ila's Rock Paper Scissors site is live, the link can be found [HERE](https://rock-paper-scissors-by-ila-72f68cf0d429.herokuapp.com/)
@@ -29,11 +31,11 @@ Ila's Rock Paper Scissors site is live, the link can be found [HERE](https://roc
   + [Main Languages Used](#main-languages-used "Main Languages Used")
   + [Frameworks, Libraries & Programs Used](#frameworks-libraries-programs-used "Frameworks, Libraries & Programs Used")
 + [Deployment](#deployment "Deployment")
-+ [Version Control](#version-control "Version Control")
-+ [Page Deployment](#page-deployment "Page Deployment")
+    - [1 - Version Control](#version-control "Version Control")
+    - [2 - Page Deployment](#page-deployment "Page Deployment")
 + [Credits](#credits "Credits")
   + [Content](#content "Content")
-  + [Media](#media "Media")
+
 
 ## UX
 
@@ -69,28 +71,34 @@ Make the game more challenging by providing more options to choose from and a le
 
 #### Landing Page:
 ![Landing Page](assets/images/readme-landingpage.png)
+
 The user is greeted with a couple of fun facts regarding the original game of Rock Paper Scissors. The user is then able to choose whether to revise the rules of the game or go straight to playing.
 The only viable options to choose from (Y or N) are clearly stated. If the user types any other keys or clicks enter without typing anything, an error message is displayed with the only available options. A loop makes sure that the user has the chance to type their answer again, until they type an acceptable option. 
 
 #### Rules Refresher:
 ![Rules Refresher](assets/images/readme-rulesrefresher.png)
+
 A quick summary of the main rules of the game, how points are assigned and how many are needed to win the game. In the subsequent line, the user can start playing by entering one of the possible options.
 
 #### Possible Outcomes:
 ![Possible Outcomes](assets/images/readme-outcomes.png)
+
 For each round the user and the bot's choices are displayed, as well as the partial results. If it is a tie, the user is prompted to make another choice.
 
 #### Error Handling:
 ![Invalid Input](assets/images/readme-invalidinput.png)
+
 The only viable options to choose from while playing are Rock, Paper, Scissors. The input can be typed in both uppercase and lowercase and still treated as valid.
 If the user types any other keys or clicks enter without typing anything, an error message is displayed reminding them of the only three available options. A loop makes sure that the user has the chance to type their choice again, until they type an acceptable option.
 
 #### Final Scores:
 ![Final Scores](assets/images/readme-finalscores.png)
+
 As soon as either the user or the bot score 3 points, the end of the game is announced together with the final results, including the number of ties.
 
 #### Play again or Quit app:
 ![Play again or Quit](assets/images/readme-quit-restart.png)
+
 The user has the option to quit the app or keep playing. In the latter case, the game restarts and the scores are reset.
 
 ### Features Left to Implement
@@ -101,36 +109,61 @@ The user has the option to quit the app or keep playing. In the latter case, the
 ## Testing
 
 ### Validator Testing
-- The code has been tested by using [CI PEP8 Online](hhttps://pep8ci.herokuapp.com/).
-![PEP8 CI Validation](assets/images/readme-pep8.png)
+- The code has been tested by using [CI PEP8 Online](https://pep8ci.herokuapp.com/). 
 The only error originally found was a blank line left at end of the file. This error has been fixed.
+![PEP8 CI Validation](assets/images/readme-pep8.png)
+
 
 ### Manual Testing
 | Test            | Expected            | Outcome     |
 | :-------------- | :------------------ | :---------- |
-|   Open landing page             |   A series of print statements are displayed, greeting the user and providing fun facts about the game. In the last line the user is asked if they wish to revise the game before playing.                  | As Expected |
-|   Click enter without typing anything             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
-|   Type a number or a series of numbers             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
-|   Type random keys          | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
-|   Type y in lowercase             |    The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                 | As Expected |
-|   Type Y in uppercase             |  The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                   | As Expected |
-|   Type n in lowercase             |   The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                  | As Expected |
-|    Type N in uppercase            |   The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                  | As Expected |
-|   On the first round of the game type rock in lowercase            |  The input is validated by the system which shows the user's choice, a random bot's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
-|   On the second round of the game type rock in uppercase            |  The input is validated by the system which shows the user's choice, a random bot's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
-|   On the third round of the game type a random combination of lowercase and uppercase letters, such as RoCk or rOCk.          |  The input is validated by the system which shows the user's choice, a random bot's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
-|   Keep playing until either party scores a total of three points.         |  The game is over, the final scores are displayed and the winner is announced. The last line asks the user if they want play again. Two options are displayed: Y to answer Yes and Q to quit the application.            | As Expected |
-|   Type y in lowercase        |  A message wishes the user best of luck. On a second line the user is prompted to start playing by typing an option between Rock, Paper and Scissors.                           | As Expected |
-|   Type Y in uppercase        |  A message wishes the user best of luck. On a second line the user is prompted to start playing by typing an option between Rock, Paper and Scissors.                           | As Expected |
-|   Type any of the following options: yes / YES / YeS / YEs / yeS / YEs / Yes / yES       | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.              | As Expected |
-|   Click enter without typing anything             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.              | As Expected |
-|   Type a number or a series of numbers             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.             | As Expected |
-|   Type random keys          | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.               | As Expected |
-|   Type q in lowercase          | A goodbye message is displayed thanking the user for playing.             | As Expected |
-|   Type Q in uppercase          | A goodbye message is displayed thanking the user for playing.             | As Expected |
+|   Open landing page             |   A series of print statements are displayed, greeting the user and providing fun facts about the game. In the last line the user is asked if they wish to revise the rules before playing.                  | As Expected |
+|  Prompt: Do you need to refresh the rules? Y/N: 
+Click enter without typing anything             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
+|   Prompt: Do you need to refresh the rules? Y/N:
+Type a number or a series of numbers             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
+|   Prompt: Do you need to refresh the rules? Y/N:
+Type random keys          | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
+|   Prompt: Do you need to refresh the rules? Y/N:
+Type y in lowercase             |    The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                 | As Expected |
+|   Prompt: Do you need to refresh the rules? Y/N:
+Type Y in uppercase             |  The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                   | As Expected |
+|   Prompt: Do you need to refresh the rules? Y/N:
+Type n in lowercase             |   The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                  | As Expected |
+|    Prompt: Do you need to refresh the rules? Y/N:
+Type N in uppercase            |   The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                  | As Expected |
+|   Prompt: Pick Rock/Paper/Scissors: 
+Type rock in lowercase            |  The input is validated by the system which shows the user's choice, a random bot's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
+|   Prompt: Pick Rock/Paper/Scissors: 
+Type rock in uppercase            |  The input is validated by the system which shows the user's choice, a random bot's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
+|   Prompt: Pick Rock/Paper/Scissors:
+Type a random combination of lowercase and uppercase letters, such as RoCk or rOCk.          |  The input is validated by the system which shows the user's choice, a random bot's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
+|   Keep playing until either opponent scores a total of three points.         |  The game is over, the final scores are displayed and the winner is announced. The last line asks the user if they want play again. Two options are displayed: Y to answer Yes and Q to quit the application.            | As Expected |
+|   Prompt: Do you want to play again? (Y)es/(Q)uit:
+Type y in lowercase        |  A message wishes the user best of luck. On a second line the user is prompted to start playing by typing an option between Rock, Paper and Scissors.                           | As Expected |
+|   Prompt: Do you want to play again? (Y)es/(Q)uit:
+Type Y in uppercase        |  A message wishes the user best of luck. On a second line the user is prompted to start playing by typing an option between Rock, Paper and Scissors.                           | As Expected |
+|   Prompt: Do you want to play again? (Y)es/(Q)uit:
+Type any of the following options: yes / YES / YeS / YEs / yeS / YEs / Yes / yES       | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.              | As Expected |
+|   Prompt: Do you want to play again? (Y)es/(Q)uit:
+Click enter without typing anything             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.              | As Expected |
+|   Prompt: Do you want to play again? (Y)es/(Q)uit:
+Type a number or a series of numbers             | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.             | As Expected |
+|   Prompt: Do you want to play again? (Y)es/(Q)uit:
+Type random keys          | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.               | As Expected |
+|   Prompt: Here you go, best of luck! Pick Rock/Paper/Scissors:
+Play the game until a winner is declared. The scores from the previous game were correctly reset and the score of the winner of the current game shows exactly 3 points (no more than 3) | As Expected |
+|   Prompt: Do you want to play again? (Y)es/(Q)uit:
+Type q in lowercase          | A goodbye message is displayed thanking the user for playing.             | As Expected |
+|   Prompt: Do you want to play again? (Y)es/(Q)uit:
+Type Q in uppercase          | A goodbye message is displayed thanking the user for playing.             | As Expected |
 |   Click on Run Program          | The previous messages are cleared and the landing page is displayed.            | As Expected |
 
-
+### Bugs
+- At the onset of the project, my very first approach was to include multiple functionalities inside the same function. My CI mentor Martina suggested that I break down the structure of the code into smaller and more manageable functions, so that the code would be easier to maintain. I implemented the feedback by creating separate functions for displaying the rules, getting the user input, establishing the winner, and playing again. 
+- Once the user decided to play another game, the system kept adding points to the scores of the previous game, instead of resetting the count. I solved this by creating a function to reset the scores, before starting a new game.
+- Through testing, I realized the game kept playing in a loop, even when the user decided to exit the game. I researched a possible solution and solved it by importing "sys" and adding "sys.exit()". The instructions to implement this specific piece of code was sourced from [StackOverflow](https://stackoverflow.com/questions/14639077/how-to-use-sys-exit-in-python).
+- At the beginning I had not envisaged a proper error handling for incorrect input. I included one instance of exception handling to display error messages to the user and instruct them on the correct options to input.
 
 ### Unfixed Bugs
 None that I am aware of as of now.
@@ -140,33 +173,64 @@ None that I am aware of as of now.
 - Python
 
 ### Frameworks, Libraries & Programs Used
+- Gitpod and Codeanywhere - used as the coding environment.
 - GitHub - to store the repository for submission.
 - Lucid - to create the mock up in preparation for the project.
 - Heroku - to deploy the live version of the terminal
+- Random - to randomize the choices of the computer player.
 
 ## Deployment
-The site was deployed to Heroku. The steps to deploy are as follows:
-- log in to heroku
-- create a new app
-- navigate to settings
-- add the following KEY/VALUE pair:
-- - PORT + 8000
-- add build packs (in this order)
-- - Python
-- - nodejs
-- go to GitPod terminal
-- type the following commands into the terminal:
-- - heroku login -i
-- - enter in username + password
-- - heroku apps
-- - heroku git:remote -a my-app-name 
-- - git add .
-- - git commit -m "Deploy to Heroku cia CLI"
-- - git push origin main
-- - git push heroku main
-- The live link can be found [HERE - Ila's Rock Paper Scissors](hhttps://rock-paper-scissors-by-ila-72f68cf0d429.herokuapp.com/)
-- * Site has been deployed to [Heroku](https://heroku.com/), following these [instructions]().
+### Version Control
+The version control was maintained using git within GitPod and CodeAnywhere to push code to the main repository.
+
+ * From the Gitpod terminal type "git add .", to make changes and/or updates to the files.
+
+ * Type "git commit -m (insert a short descriptive text)", which commits the changes and updates the files.
+
+ * Use the "git push" command, which pushes the committed changes to the main repository. To go back and forth between Gitpod and CodeAnywhere workspaces, use the command "git pull" to make sure all data has been brought over before working from the new space.
+
+ ### Page Deployment
+
+The site was deployed to Heroku CLI. The steps to deploy are as follows:
+
+ * After creating an account and logging in, click "New" to create a new app from the dashboard.
+
+ * Choose app's unique name and select your region; press "Create app".
+
+ * Go to "Settings" and navigate to Config Vars.
+
+ * Add Config Vars. 
+    * This app used only one:
+        * KEY = PORT : VALUE = 8000.
+ 
+ * Add buildpacks Python and NodeJS - in this order.
+ 
+ * Now you may click the Deploy tab.
+ 
+ * Scroll Down to Deployment Method and select GitHub.
+ 
+ * Select repository to be deployed and connect to Heroku.
+ 
+ * Scroll down to deploy: 
+    * Option 1 is selecting Automatic deploys (Will Update Automatically with every "git push"). This is what I chose for this project.
+    * Option 2 is selecting Manual deploy (Needs to be manually redeployed after every change, via Heroku deploy tab).
+
+ Visit the live deployment [HERE - Ila's Rock Paper Scissors](hhttps://rock-paper-scissors-by-ila-72f68cf0d429.herokuapp.com/)
+
 
 ## Credits
+As an initial inspiration, I watched the following YouTube tutorials by:
+- [Kylie Ying](https://www.youtube.com/watch?v=8ext9G7xspg&t=2189s)
+- [Shaun Halverson](https://www.youtube.com/watch?v=LumFgJxRjP4)
+
+To understand and implement the logic required for the game, I consulted the following articles by:
+[Chris Wilkerson](https://realpython.com/python-rock-paper-scissors/#what-is-rock-paper-scissors)
+[Teri Eyenike](https://hackernoon.com/how-to-build-a-rock-paper-scissors-game-in-python)
+
+The deployment of the game was learned from Code Institute's walkthrough project: love_sandwiches
 
 ### Content
++ [StackOverflow](https://stackoverflow.com/questions/14639077/how-to-use-sys-exit-in-python) - sourced for the exit function.
++ [W3Schools Python Random randint](https://www.w3schools.com/python/ref_random_randint.asp) - consulted to learn how to import the random system.
++ [W3Schools Conditions and If statements](https://www.w3schools.com/python/python_conditions.asp) - consulted as reference point. 
++ [W3Schools While loops](https://www.w3schools.com/python/python_while_loops.asp) - consulted as reference point.
