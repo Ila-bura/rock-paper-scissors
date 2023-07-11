@@ -21,15 +21,26 @@ Ila's Rock Paper Scissors site is live, the link can be found [HERE](https://roc
   + [Communication](#communication "Communication")
   + [Current User Goals](#current-user-goals "Current User Goals")
   + [New User Goals](#new-user-goals "New User Goals")
+  + [Future Goals](#future-goals "Future Goals")
 + [Design](#design "Design")
+   + [Wireframes](#wireframes "Wireframes")
 + [Features](#features "Features")
   + [Existing Features](#existing-features "Existing Features")
+    + [Landing Page](#landing-page "Landing Page")
+    + [Rules Refresher](#rules-refresher "Rules Refresher")
+    + [Possible Outcomes](#possible-outcomes "Possible Outcomes")
+    + [Error Handling](#error-handling "Error Handling")
+    + [Final Scores](#final-scores "Final Scores")
+    + [Play Again or Quit App](#play-again-or-quit-app "Play Again or Quit App")
+  + [Features Left to Implement](#features-left-to-implement "Features Left to Implement")
 + [Testing](#testing "Testing")
   + [Validator Testing](#validator-testing "Validator Testing")
+  + [Manual Testing](#manual-testing "Manual Testing")
+  + [Bugs](#bugs "Bugs")
   + [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
 + [Technologies Used](#technologies-used "Technologies Used")
-  + [Main Language Used](#main-language-used "Main Language Used")
-  + [Frameworks, Libraries & Programs Used](#frameworks-libraries-programs-used "Frameworks, Libraries & Programs Used")
+  + [Main Language](#main-language "Main Language")
+  + [Frameworks, Libraries & Programs](#frameworks-libraries-programs "Frameworks, Libraries & Programs")
 + [Deployment](#deployment "Deployment")
     - [1 - Version Control](#version-control "Version Control")
     - [2 - Page Deployment](#page-deployment "Page Deployment")
@@ -56,7 +67,7 @@ The app aims to provide light-hearted entertainment. The print statements genera
 To keep the user entertained and engaged with the app by allowing them to play multiple games, one after the other. 
 
 ### New User Goals:
-Experiment with a coomputer-based version of the old-fashioned game.
+Experiment with a computer-based version of the old-fashioned game.
 
 ### Future Goals:
 Make the game more challenging by providing more options to choose from and a leaderboard to encourage users to keep playing. Improve text readability by adding a touch of colour to the print statements.
@@ -205,8 +216,7 @@ The app was deployed to Heroku CLI. The steps to deploy are as follows:
  * Go to "Settings" and navigate to Config Vars.
 
  * Add Config Vars. 
-    * For this app only one was used:
-        * KEY = PORT : VALUE = 8000.
+ For this app only one was used: KEY = PORT : VALUE = 8000.
  
  * Add buildpacks Python and NodeJS - in this order.
  
@@ -235,8 +245,8 @@ To understand and implement the logic required for the game, I consulted the fol
 The following pages were consulted throughout the coding process:
 + [StackOverflow](https://stackoverflow.com/questions/14639077/how-to-use-sys-exit-in-python) - sourced for the exit function.
 + [W3Schools Python Random randint](https://www.w3schools.com/python/ref_random_randint.asp) - to learn how to import the random system.
-+ [W3Schools Conditions and If statements](https://www.w3schools.com/python/python_conditions.asp) - consulted as a reference point. 
-+ [W3Schools While loops](https://www.w3schools.com/python/python_while_loops.asp) - consulted as a reference point.
++ [W3Schools Conditions and If statements](https://www.w3schools.com/python/python_conditions.asp) - as a reference point. 
++ [W3Schools While loops](https://www.w3schools.com/python/python_while_loops.asp) - as a reference point.
 
 The deployment of the game was learned from Code Institute's walkthrough project: love_sandwiches
 
