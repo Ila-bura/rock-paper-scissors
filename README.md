@@ -143,16 +143,14 @@ Type N in uppercase            |   The rules of the game are displayed. The user
 |   Terminal: Pick Rock/Paper/Scissors: 
 Type rock in lowercase / Type paper in lowercase / Type scissors in lowercase            |  The input is validated by the system, which shows the user's choice, a random computer's choice and declares the winner of the round. The user is prompted to choose an option between Rock, Paper and Scissors.                  | As Expected |
 |   Terminal: Pick Rock/Paper/Scissors: 
-Type rock in uppercase 
-Type paper in uppercase 
-Type scissors in uppercase          |  The input is validated by the system, which shows the user's choice, a random computer's choice and declares the winner of the round. The user is prompted to choose an option between Rock, Paper and Scissors.                  | As Expected |
+Type rock in uppercase / Type paper in uppercase / Type scissors in uppercase          |  The input is validated by the system, which shows the user's choice, a random computer's choice and declares the winner of the round. The user is prompted to choose an option between Rock, Paper and Scissors.                  | As Expected |
 |   Terminal: Pick Rock/Paper/Scissors:
 Type a random combination of lowercase and uppercase letters, such as RoCk, pApeR or scISsORs.          |  The input is validated by the system, which shows the user's choice, a random computer's choice and declares the winner of the round. The user is prompted to choose an option between Rock, Paper and Scissors.                  | As Expected |
 |   Keep playing until either opponent scores a total of three points.         |  The game is over, the final scores are displayed and the winner is announced. The user is asked if they want to play again. Two options are displayed: Y to answer yes and Q to quit the application.            | As Expected |
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:
-Type y in lowercase        |  A message wishes the user best of luck. On a second line the user is prompted to choose an option between Rock, Paper and Scissors.                           | As Expected |
+Type y in lowercase        |  A message wishes the user best of luck. The user is prompted to choose an option between Rock, Paper and Scissors.                           | As Expected |
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:
-Type Y in uppercase        |  A message wishes the user best of luck. On a second line the user is prompted choose an option between Rock, Paper and Scissors.                           | As Expected |
+Type Y in uppercase        |  A message wishes the user best of luck. The user is prompted choose an option between Rock, Paper and Scissors.                           | As Expected |
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:
 Type any of the following options: yes / YES / YeS / YEs / yeS / YEs / Yes / yES       | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. The user is asked if they wish to play the game again.              | As Expected |
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:

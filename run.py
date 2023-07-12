@@ -100,7 +100,7 @@ def display_game_result():
         print("\n You won the game!")
     else:
         print("\n Bot won the game!")
-        print("\n Sorry, losing sucks")
+        print("\n Sorry, losing sucks!")
 
 
 def ask_restart_quit():
