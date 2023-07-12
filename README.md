@@ -1,11 +1,11 @@
 # Ila's Rock Paper Scissors
 Ila's Rock Paper Scissors is an app that allows users to play the old-fashioned game of chance against the computer.  
 
-The game consists of multiple rounds: for each round, the user is prompted to type one of the three possible options then the computer will make a random choice itself. 
+The game consists of multiple rounds: for each round, the user is prompted to type their choice, then the computer picks a random option and the outcome of the round is declared. 
 
 There are three possible outcomes for each round: the user wins, the computer wins or it is a tie. For every win, one point is assigned. Ties do not count towards scoring. The first player to score 3 points wins the game. 
 
-Once the game is over and the results are displayed, the user is presented with the option to run the app again, or quit the application. If they decide to play again, the scores will be reset and the game will restart.
+Once the game is over and the final results are displayed, the user is presented with the option to play again, or quit the application. If they decide to play again, the scores will be reset and the game will restart.
 
 The app is a terminal-based game and was designed to be accessed on desktop only. However, here is a preview of what it would look like on a variety of devices:
 
@@ -16,7 +16,6 @@ Ila's Rock Paper Scissors site is live, the link can be found [HERE](https://roc
 ## Table of Contents
 + [UX](#ux "UX")
   + [Site Purpose](#site-purpose "Site Purpose")
-  + [Site Goal](#site-goal "Site Goal")
   + [Audience](#audience "Audience")
   + [Communication](#communication "Communication")
   + [Current User Goals](#current-user-goals "Current User Goals")
@@ -52,13 +51,10 @@ Ila's Rock Paper Scissors site is live, the link can be found [HERE](https://roc
 ## UX
 
 ### Site Purpose:
-To allow users to challenge the computer playing the Rock Paper Scissors game.
-
-### Site Goal: 
-To provide a simple and fun platform to try their luck and have fun in anticipating the computer's random choice.
+To provide a simple and fun platform where the user can try their luck and have fun in anticipating the computer's random choice.
 
 ### Audience:
-Anyone passionate about computer games based on luck.
+Anyone passionate about games of chance.
 
 ### Communication:
 The app aims to provide light-hearted entertainment. The print statements generated are clear and to the point, prompting the user to choose their options at each turn and prevent errors by communicating clearly if the input is incorrect. 
@@ -90,7 +86,7 @@ The only viable options to choose from (Y or N) are clearly stated. If the user 
 #### Rules Refresher:
 ![Rules Refresher](assets/images/readme-rulesrefresher.png)
 
-A quick summary of the main rules of the game, how points are assigned and how many are needed to win the game. In the subsequent line, the user can start playing by entering one of the possible options.
+A series of print statements include a quick summary of the main rules of the game, how points are assigned and how many are needed to win the game. In the subsequent line, the user can start playing by entering one of the possible options.
 
 #### Possible Outcomes:
 ![Possible Outcomes](assets/images/readme-outcomes.png)
@@ -100,13 +96,13 @@ For each round the user and the computer's choices are displayed, as well as the
 #### Error Handling:
 ![Invalid Input](assets/images/readme-invalidinput.png)
 
-The only viable options to choose from while playing are Rock, Paper, Scissors. The input can be typed in both uppercase and lowercase and still treated as valid.
+The only viable options to choose from while playing are Rock, Paper, Scissors. The input is considered valid when typed in uppercase, lowercase or a combination of both.
 If the user types any other keys or clicks enter without typing anything, an error message is displayed reminding them of the only three available options. A loop makes sure that the user has the chance to type their choice again, until they type an acceptable option.
 
 #### Final Scores:
 ![Final Scores](assets/images/readme-finalscores.png)
 
-As soon as either the user or the computer score 3 points, the end of the game is announced together with the final results, including the number of ties.
+As soon as either the user or the computer scores 3 points, the end of the game is announced together with the final results, including the number of ties.
 
 #### Play Again or Quit App:
 ![Play again or Quit](assets/images/readme-quit-restart.png)
@@ -145,13 +141,13 @@ Type n in lowercase             |   The rules of the game are displayed. The fin
 |    Terminal: Do you need to refresh the rules? Y/N:
 Type N in uppercase            |   The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                  | As Expected |
 |   Terminal: Pick Rock/Paper/Scissors: 
-Type rock in lowercase / Type paper in lowercase / Type scissors in lowercase            |  The input is validated by the system which shows the user's choice, a random computer's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
+Type rock in lowercase / Type paper in lowercase / Type scissors in lowercase            |  The input is validated by the system which shows the user's choice, a random computer's choice and declares the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
 |   Terminal: Pick Rock/Paper/Scissors: 
 Type rock in uppercase 
 Type paper in uppercase 
-Type scissors in uppercase          |  The input is validated by the system which shows the user's choice, a random computer's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
+Type scissors in uppercase          |  The input is validated by the system which shows the user's choice, a random computer's choice and declares the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
 |   Terminal: Pick Rock/Paper/Scissors:
-Type a random combination of lowercase and uppercase letters, such as RoCk, pApeR or scISsORs.          |  The input is validated by the system which shows the user's choice, a random computer's choice and establish the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
+Type a random combination of lowercase and uppercase letters, such as RoCk, pApeR or scISsORs.          |  The input is validated by the system which shows the user's choice, a random computer's choice and declares the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
 |   Keep playing until either opponent scores a total of three points.         |  The game is over, the final scores are displayed and the winner is announced. The last line asks the user if they want play again. Two options are displayed: Y to answer Yes and Q to quit the application.            | As Expected |
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:
 Type y in lowercase        |  A message wishes the user best of luck. On a second line the user is prompted to start playing by typing an option between Rock, Paper and Scissors.                           | As Expected |
@@ -166,7 +162,7 @@ Type a number or a series of numbers             | An error message is displayed
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:
 Type random keys          | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. In a subsequent line the user is asked if they wish to play the game again.               | As Expected |
 |   Terminal: Here you go, best of luck! Pick Rock/Paper/Scissors:
-Play the game until a winner is declared. | The scores from the previous game were correctly reset and the score of the winner of the current game shows exactly 3 points (no more than 3) | As Expected |
+Play the game until a winner is declared. | The scores from the previous game are correctly reset and the final score of the winner for the current game shows exactly 3 points (no more than 3). | As Expected |
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:
 Type q in lowercase          | A goodbye message is displayed thanking the user for playing.             | As Expected |
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:
@@ -174,19 +170,19 @@ Type Q in uppercase          | A goodbye message is displayed thanking the user 
 |   Click on Run Program          | The previous messages are cleared and the landing page is displayed.            | As Expected |
 
 ### Bugs
-- At the onset of the project, my very first approach was to include multiple functionalities inside the same function. My CI mentor Martina suggested that I break down the structure of the code into smaller and more manageable functions, so that the code would be easier to read, test and maintain. I implemented the feedback by creating separate functions for displaying the rules, getting the user input, establishing the winner, and playing again. 
-- At one point, when testing the scenrio where the user decided to play another game, the system kept adding points to the scores of the previous game, instead of resetting the count. I solved this by creating a function to reset the scores, before starting a new game.
-- Through testing, I realized the game kept playing in a loop, even when the user decided to exit the game. I researched a possible solution and solved it by importing "sys" and adding "sys.exit()". The instructions to implement this specific piece of code were sourced from [StackOverflow](https://stackoverflow.com/questions/14639077/how-to-use-sys-exit-in-python).
-- At the beginning I had not envisaged a proper error handling for incorrect input. I included one instance of exception handling to display error messages to the user and recommend the correct options to input.
+- At the onset of the project, my very first approach was to include multiple functionalities inside the same function. My CI mentor Martina Terlevic suggested that I break down the structure of the code into smaller and more manageable functions, so that the code would be easier to read, test and maintain. I implemented the feedback by creating separate functions for displaying the rules, getting the user input, establishing the winner, and playing again. 
+- When testing the scenario where the user plays multiple games in a row, the system kept adding points to the scores from the previous game, instead of resetting the count. I solved this by creating a function to reset the scores, before starting a new game.
+- Through testing, I realized the game kept playing in a loop, even when the user decided to stop playing the game. I researched a solution and solved it by importing "sys" and adding "sys.exit()". The instructions to implement this specific piece of code were sourced from [StackOverflow](https://stackoverflow.com/questions/14639077/how-to-use-sys-exit-in-python).
+- At the beginning I had not envisaged proper error handling for user's incorrect input. I therefore decided to include one instance of exception handling so that an error message is displayed along with the correct options to choose from.
 
 ### Unfixed Bugs
 None that I am aware of as of now.
 
 ## Technologies Used
-### Main Language Used
+### Main Language
 - Python
 
-### Frameworks, Libraries & Programs Used
+### Frameworks, Libraries & Programs
 - Gitpod and Codeanywhere - used as the coding environment.
 - GitHub - to store the repository for submission.
 - Lucid - to create the mock up in preparation for the project.
@@ -248,7 +244,7 @@ The following pages were consulted throughout the coding process:
 + [W3Schools Conditions and If statements](https://www.w3schools.com/python/python_conditions.asp) - as a reference point. 
 + [W3Schools While loops](https://www.w3schools.com/python/python_while_loops.asp) - as a reference point.
 
-The deployment of the game was learned from Code Institute's walkthrough project: love_sandwiches
+The deployment of the game was learned from Code Institute's walkthrough project: love_sandwiches.
 
 ### Acknowledgements
 A special acknowledgement goes to [Martina Terlevic](https://github.com/SephTheOverwitch), my Code Institute Mentor, for her invaluable professional advice, unwavering support and encouragement.
