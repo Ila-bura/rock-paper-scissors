@@ -5,9 +5,9 @@ The game consists of multiple rounds: for each round, the user is prompted to ty
 
 There are three possible outcomes for each round: the user wins, the computer wins or it is a tie. For every win, one point is assigned. Ties do not count towards scoring. The first player to score 3 points wins the game. 
 
-Once the game is over and the final results are displayed, the user is presented with the option to play again, or quit the application. If they decide to play again, the scores will be reset and the game will restart.
+Once the game is over and the final results are displayed, the user is presented with the option to play again, or quit the application. If they decide to play again, the scores are reset and the game restarts.
 
-The app is a terminal-based game and was designed to be accessed on desktop only. However, here is a preview of what it would look like on a variety of devices:
+The app is a terminal-based game and was designed to be accessed on desktop only. However, here is a preview of what it looks like on a variety of devices:
 
 ![Site view across devices](assets/images/readme-amiresponsive.png)
 
@@ -51,16 +51,16 @@ Ila's Rock Paper Scissors site is live, the link can be found [HERE](https://roc
 ## UX
 
 ### Site Purpose:
-To provide a simple and fun platform where the user can try their luck and have fun in anticipating the computer's random choice.
+To provide a simple and fun platform where the user can try their luck and have fun anticipating the computer's random choice.
 
 ### Audience:
 Anyone passionate about games of chance.
 
 ### Communication:
-The app aims to provide light-hearted entertainment. The print statements generated are clear and to the point, prompting the user to choose their options at each turn and prevent errors by communicating clearly if the input is incorrect. 
+The app aims to provide light-hearted entertainment. The print statements generated are clear and to the point, prompting the user to choose their option at each turn and prevent errors by communicating clearly if the input is incorrect. 
 
 ### Current User Goals:
-To keep the user entertained and engaged with the app by allowing them to play multiple games, one after the other. 
+To keep the user entertained and engaged with the app by allowing them to play multiple games in a row. 
 
 ### New User Goals:
 Experiment with a computer-based version of the old-fashioned game.
@@ -107,7 +107,7 @@ As soon as either the user or the computer scores 3 points, the end of the game 
 #### Play Again or Quit App:
 ![Play again or Quit](assets/images/readme-quit-restart.png)
 
-The user has the option to quit the app or keep playing. In the latter case, the game restarts and the scores are reset.
+The user has the option to quit the app or keep playing. In the latter case, the scores are reset and the game restarts.
 
 ### Features Left to Implement
 - Expand the app and provide more options to choose from (Lizard, Spock).
@@ -125,44 +125,44 @@ The only error originally found was a blank line left at end of the file. This e
 ### Manual Testing
 | Test            | Expected            | Outcome     |
 | :-------------- | :------------------ | :---------- |
-|   Open landing page             |   A series of print statements are displayed, greeting the user and providing fun facts about the game. In the last line the user is asked if they wish to revise the rules before playing.                  | As Expected |
+|   Open landing page             |   A series of print statements are displayed, greeting the user and providing fun facts about the game. The user is asked if they wish to revise the rules before playing.                  | As Expected |
 |  Terminal: Do you need to refresh the rules? Y/N: 
-Click enter without typing anything             | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
+Click enter without typing anything             | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. The user is asked again if they wish to revise the game before playing.              | As Expected |
 |   Terminal: Do you need to refresh the rules? Y/N:
-Type a number or a series of numbers             | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
+Type a number or a series of numbers             | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. The user is asked again if they wish to revise the game before playing.              | As Expected |
 |   Terminal: Do you need to refresh the rules? Y/N:
-Type random keys          | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. In the last line the user is asked again if they wish to revise the game before playing.              | As Expected |
+Type random keys          | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. The user is asked again if they wish to revise the game before playing.              | As Expected |
 |   Terminal: Do you need to refresh the rules? Y/N:
-Type y in lowercase             |    The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                 | As Expected |
+Type y in lowercase             |    The rules of the game are displayed. The user is prompted to choose an option between Rock, Paper and Scissors.                 | As Expected |
 |   Terminal: Do you need to refresh the rules? Y/N:
-Type Y in uppercase             |  The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                   | As Expected |
+Type Y in uppercase             |  The rules of the game are displayed. The user is prompted to choose an option between Rock, Paper and Scissors.                   | As Expected |
 |   Terminal: Do you need to refresh the rules? Y/N:
-Type n in lowercase             |   The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                  | As Expected |
+Type n in lowercase             |   The rules of the game are displayed. The user is prompted to choose an option between Rock, Paper and Scissors.                  | As Expected |
 |    Terminal: Do you need to refresh the rules? Y/N:
-Type N in uppercase            |   The rules of the game are displayed. The final line prompts the user to start playing by typing an option between Rock, Paper and Scissors.                  | As Expected |
+Type N in uppercase            |   The rules of the game are displayed. The user is prompted to choose an option between Rock, Paper and Scissors.                  | As Expected |
 |   Terminal: Pick Rock/Paper/Scissors: 
-Type rock in lowercase / Type paper in lowercase / Type scissors in lowercase            |  The input is validated by the system which shows the user's choice, a random computer's choice and declares the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
+Type rock in lowercase / Type paper in lowercase / Type scissors in lowercase            |  The input is validated by the system, which shows the user's choice, a random computer's choice and declares the winner of the round. The user is prompted to choose an option between Rock, Paper and Scissors.                  | As Expected |
 |   Terminal: Pick Rock/Paper/Scissors: 
 Type rock in uppercase 
 Type paper in uppercase 
-Type scissors in uppercase          |  The input is validated by the system which shows the user's choice, a random computer's choice and declares the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
+Type scissors in uppercase          |  The input is validated by the system, which shows the user's choice, a random computer's choice and declares the winner of the round. The user is prompted to choose an option between Rock, Paper and Scissors.                  | As Expected |
 |   Terminal: Pick Rock/Paper/Scissors:
-Type a random combination of lowercase and uppercase letters, such as RoCk, pApeR or scISsORs.          |  The input is validated by the system which shows the user's choice, a random computer's choice and declares the winner of the round. The last line prompts the user to pick Rock, Paper or Scissors.                  | As Expected |
-|   Keep playing until either opponent scores a total of three points.         |  The game is over, the final scores are displayed and the winner is announced. The last line asks the user if they want play again. Two options are displayed: Y to answer Yes and Q to quit the application.            | As Expected |
+Type a random combination of lowercase and uppercase letters, such as RoCk, pApeR or scISsORs.          |  The input is validated by the system, which shows the user's choice, a random computer's choice and declares the winner of the round. The user is prompted to choose an option between Rock, Paper and Scissors.                  | As Expected |
+|   Keep playing until either opponent scores a total of three points.         |  The game is over, the final scores are displayed and the winner is announced. The user is asked if they want to play again. Two options are displayed: Y to answer yes and Q to quit the application.            | As Expected |
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:
-Type y in lowercase        |  A message wishes the user best of luck. On a second line the user is prompted to start playing by typing an option between Rock, Paper and Scissors.                           | As Expected |
+Type y in lowercase        |  A message wishes the user best of luck. On a second line the user is prompted to choose an option between Rock, Paper and Scissors.                           | As Expected |
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:
-Type Y in uppercase        |  A message wishes the user best of luck. On a second line the user is prompted to start playing by typing an option between Rock, Paper and Scissors.                           | As Expected |
+Type Y in uppercase        |  A message wishes the user best of luck. On a second line the user is prompted choose an option between Rock, Paper and Scissors.                           | As Expected |
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:
-Type any of the following options: yes / YES / YeS / YEs / yeS / YEs / Yes / yES       | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. In a subsequent line the user is asked if they wish to play the game again.              | As Expected |
+Type any of the following options: yes / YES / YeS / YEs / yeS / YEs / Yes / yES       | An error message is displayed warning the user about the invalid input and reminding them what the two possible options are. The user is asked if they wish to play the game again.              | As Expected |
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:
-Click enter without typing anything             | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. In a subsequent line the user is asked if they wish to play the game again.              | As Expected |
+Click enter without typing anything             | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. The user is asked if they wish to play the game again.              | As Expected |
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:
-Type a number or a series of numbers             | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. In a subsequent line the user is asked if they wish to play the game again.             | As Expected |
+Type a number or a series of numbers             | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. The user is asked if they wish to play the game again.             | As Expected |
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:
-Type random keys          | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. In a subsequent line the user is asked if they wish to play the game again.               | As Expected |
+Type random keys          | An error message is displayed warning the user about the invalid input and reminding them of the two possible options. The user is asked if they wish to play the game again.               | As Expected |
 |   Terminal: Here you go, best of luck! Pick Rock/Paper/Scissors:
-Play the game until a winner is declared. | The scores from the previous game are correctly reset and the final score of the winner for the current game shows exactly 3 points (no more than 3). | As Expected |
+Play the game until a winner is declared. | The scores from the previous game are reset and the final score of the winner for the current game shows exactly 3 points (no more than 3). | As Expected |
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:
 Type q in lowercase          | A goodbye message is displayed thanking the user for playing.             | As Expected |
 |   Terminal: Do you want to play again? (Y)es/(Q)uit:
